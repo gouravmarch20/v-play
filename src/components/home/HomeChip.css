@@ -1,0 +1,16 @@
+.home-chip-wrapper {
+  min-height: 8vh;
+  background-color: gainsboro;
+  display: flex;
+  align-items: center;
+
+  /* overflow-x: scroll; */
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.home-chip {
+  background-color: green;
+  margin: 0rem 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 2rem;
+}

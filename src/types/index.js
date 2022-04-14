@@ -1,0 +1,7 @@
+// home
+export const LOAD_ALL_CATEGORIES = 'LOAD_ALL_CATEGORIES'
+export const LOAD_ALL_HOME_VIDEO = 'LOAD_ALL_HOME_VIDEO'
+export const FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY'
+
+export const LOADING = 'LOADING'
+export const ERROR = 'ERROR'
