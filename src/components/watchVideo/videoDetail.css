@@ -1,0 +1,49 @@
+.videoDetail {
+  width: 70vw;
+  margin-top: 1rem;
+}
+.videoDetail-short {
+  display: flex;
+  align-items: center;
+
+  padding: 1rem;
+}
+.videoDetail-long {
+  background-color: green;
+}
+.videoDetail-action-btn {
+  margin-left: auto;
+}
+.views {
+  margin: 0 1rem;
+  color: orange;
+  font-size: 1.8rem;
+}
+.upload-date {
+  margin-right: 1rem;
+  color: grey;
+  font-size: 1.6rem;
+}
+/*  */
+.channel-info {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+.channel-name {
+  margin-left: 2rem;
+  font-size: 700;
+  font-size: 2rem;
+}
+/*  */
+.video-description {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-size: 1.6rem;
+}
+.icon {
+  font-size: 2.4rem;
+  color: darkorchid;
+  margin: 0 1rem;
+  cursor: pointer;
+}

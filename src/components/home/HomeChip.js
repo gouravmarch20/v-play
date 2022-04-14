@@ -12,7 +12,7 @@ const HomeChip = () => {
     <div>
       <div className='home-chip-wrapper'>
         {categories.length === 0
-          ? console.log('object')
+          ? console.warn('object')
           : categories.map(category => {
               const { categoryName } = category
               return (

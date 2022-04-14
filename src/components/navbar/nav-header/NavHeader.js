@@ -7,12 +7,12 @@ const NavHeader = () => {
     <div>
       <header className='header'>
         <img src='' alt='logo' className='logo' />
-        
+
         <nav className='navbar'>
           <ul className='navbar-list'>
             <li>
               <NavLink
-                to='/home'
+                to='/'
                 className={({ isActive }) =>
                   isActive ? 'navbar-link-active' : 'navbar-link'
                 }
@@ -20,7 +20,7 @@ const NavHeader = () => {
                 Home
               </NavLink>
             </li>
-             <li>
+            <li>
               <NavLink
                 to='/signup'
                 className={({ isActive }) =>

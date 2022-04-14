@@ -4,8 +4,7 @@ import HomeVideo from '../../components/home/HomeVideo'
 import NavLeft from '../../components/navbar/nav-left/NavLeft'
 import './Home.css'
 
-const Home = () => {
-
+export const HomePage = () => {
   return (
     <div className='navbarLeft-container-wrapper'>
       <div className='nav-left'>
@@ -18,5 +17,3 @@ const Home = () => {
     </div>
   )
 }
-
-export default Home

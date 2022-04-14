@@ -1,0 +1,45 @@
+.home-video-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-left: 1.5rem;
+}
+.home-video-card {
+  min-width: 21vw;
+  height: 35vh;
+  background: lightblue;
+  cursor: pointer;
+}
+.home-video-card:hover {
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px;
+}
+.thumbnail-responsive {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+.avatar-round {
+  border-radius: 50%;
+}
+.home-video-info {
+  display: flex;
+  background-color: wheat;
+  justify-content: center;
+}
+.home-video-miniDescription {
+  margin-left: 1rem;
+  font-weight: 500;
+}
+.home-video-quickAction {
+  font-size: 3rem;
+  align-self: end;
+  margin-left: 2rem;
+}
+@media (max-width: 800px) {
+  .home-video-card {
+    min-width: 25vw;
+  }
+}

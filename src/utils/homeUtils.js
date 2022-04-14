@@ -6,3 +6,5 @@ export const getFilteredVideo = (allVideo, filterCase) => {
     return video.categoryName === filterCase
   })
 }
+export const generateThumbnail = videoId =>
+  `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`

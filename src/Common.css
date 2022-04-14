@@ -3,3 +3,10 @@ textarea {
   height: 10vh;
   width: 80%;
 }
+.title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.img-round {
+  border-radius: 50%;
+}

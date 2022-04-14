@@ -4,18 +4,15 @@ import App from './App'
 import './index.css'
 import { makeServer } from './server'
 import { BrowserRouter } from 'react-router-dom'
-import {HomeProvider} from './context/HomeContext'
+import { HomeProvider } from './context/HomeContext'
 // Call make Server
 makeServer()
 
 ReactDOM.render(
-  // <React.StrictMode>
-    <BrowserRouter>
+  <BrowserRouter>
     <HomeProvider>
       <App />
     </HomeProvider>
-    </BrowserRouter>
-  // </React.StrictMode>
-  ,
+  </BrowserRouter>,
   document.getElementById('root')
 )
