@@ -30,10 +30,15 @@ const NavHeader = () => {
                 Signup
               </NavLink>
             </li>
-            <li>
-              <a className='navbar-link' href='#'>
-                Login
-              </a>
+          <li>
+              <NavLink
+                to='/signin'
+                className={({ isActive }) =>
+                  isActive ? 'navbar-link-active' : 'navbar-link'
+                }
+              >
+                SignIn
+              </NavLink>
             </li>
           </ul>
         </nav>

@@ -4,8 +4,10 @@ import { getFilteredVideo, generateThumbnail } from '../../utils/homeUtils'
 import { SiCoronarenderer } from 'react-icons/si'
 import './homeVideo.css'
 import { Link } from 'react-router-dom'
+import { useVideo } from '../../context/VideoContext'
 const HomeVideo = () => {
   const { homeState, homeDispatch } = useHome()
+  const { videoState, videoDispatch } = useVideo()
   const allVideo = homeState?.homeVideo
   if (allVideo.length > 0) {
     var filteredVideos = getFilteredVideo(allVideo, homeState?.filterBy)
@@ -29,7 +31,15 @@ const HomeVideo = () => {
             } = video
             return (
               <div key={index} className='home-video-card'>
-                <Link to={`watch/${_id}`}>
+                <Link
+                  to={`watch/${_id}`}
+                  onClick={() => {
+                    videoDispatch({
+                      type: 'ADD_TO_WATCH_HISTORY',
+                      payload: `${_id}`
+                    })
+                  }}
+                >
                   <img
                     src={generateThumbnail(_id)}
                     alt='the video deleted form youtube server'

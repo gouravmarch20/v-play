@@ -16,7 +16,6 @@ const VidoeDetail = ({ videoId }) => {
   const videoDetail = getVideoDetails(homeVideo, videoId)
   const { uploadedOn, channelName, avatar, views, description, title } =
     videoDetail || {}
-  console.log(uploadedOn)
   return (
     <div className='videoDetail'>
       <div className='videoDetail-short'>

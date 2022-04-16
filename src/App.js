@@ -11,7 +11,9 @@ import {
   TrendingPage,
   WatchLaterPage,
   NotFoundPage,
-  HomePage
+  HomePage,
+  SignUpPage,
+  SignInPage
 } from './pages/index'
 const Router = () => {
   return (
@@ -23,6 +25,8 @@ const Router = () => {
       <Route path='/trending' element={<TrendingPage />} />
       <Route path='/playlist' element={<PlaylistPage />} />
       <Route path='/watch-later' element={<WatchLaterPage />} />
+      <Route path='/signup' element={<SignUpPage />} />
+      <Route path='/signin' element={<SignInPage />} />
       <Route path='*' element={<NotFoundPage />} />
       <Route path='/mockman' element={<Mockman />} />
     </Routes>
@@ -34,7 +38,6 @@ const App = () => {
     <div>
       <NavHeader />
       <Router />
-      {/* <Home /> */}
     </div>
   )
 }

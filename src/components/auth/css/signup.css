@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.label{
+  margin-left: .5rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.signup {
+  margin: 10vh auto;
+  max-width: 430px;
+  width: 100%;
+  padding: 34px;
+  border-radius: 1rem;
+  box-shadow: 0 5px 10px rgba(0, 4, 0, 0.6);
+  font-family: "Poppins", sans-serif;
+}
+
+
+.input-box {
+  height: 52px;
+  margin: 3rem 0;
+}
+.input-style {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 0 15px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #c7bebe;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.input-style:focus {
+  border-color: #4070f4;
+}
+/* btn */
+.signup-btn {
+  color: #fff ;
+  letter-spacing: 1px;
+  border: none;
+  background: #4070f4;
+  padding: 1.6rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: flex;
+ margin : 1rem auto;
+}
+.signin-btn{
+  font-size:1.5rem;
+  color: grey;
+}
+.signin-btn a {
+  color: rgb(176, 111, 236);
+  text-decoration: none;
+  transition: all 0.3 ease;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+/* hover  */
+.signup-btn:hover {
+  background: #0e4bf1;
+}
+.signin-btn a:hover {
+  text-decoration: underline;
+}

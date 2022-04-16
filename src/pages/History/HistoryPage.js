@@ -1,4 +1,5 @@
 import React from 'react'
+import HistoryCard from '../../components/card/HistoryCard'
 import NavLeft from '../../components/navbar/nav-left/NavLeft'
 
 export const HistoryPage = () => {
@@ -9,6 +10,8 @@ export const HistoryPage = () => {
         <div className='nav-left'>
           <NavLeft />
         </div>
+        <HistoryCard />
+   
       </div>
     </>
   )
