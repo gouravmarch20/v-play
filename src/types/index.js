@@ -5,5 +5,7 @@ export const FILTER_BY_CATEGORY = 'FILTER_BY_CATEGORY'
 
 export const LOADING = 'LOADING'
 export const ERROR = 'ERROR'
-// video
+// history
 export const ADD_TO_WATCH_HISTORY = 'ADD_TO_WATCH_HISTORY'
+export const REMOVE_WATCH_HISTORY = 'REMOVE_WATCH_HISTORY'
+// 

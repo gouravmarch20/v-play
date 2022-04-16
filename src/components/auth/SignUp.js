@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import './css/signup.css'
 import { createUser } from '../../actions/authAction'
 import { Link } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 const SignUp = () => {
+
   const [userSignUpData, setUserSignUpData] = useState({
     firstName: '',
     lastName: '',
@@ -23,6 +25,9 @@ const SignUp = () => {
   return (
     <div className='signup'>
       <h2>Registration</h2>
+      <button>
+    
+      </button>
       <form className='signup-form'>
         <div className='input-box'>
           <label htmlFor='firstName' className='label'>
