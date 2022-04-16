@@ -23,7 +23,7 @@ const NavLeft = () => {
           <span className='navLeft-link-span'>Home</span>
         </NavLink>
         <hr />
-        <NavLink
+        {/* <NavLink
           to='/trending'
           className={({ isActive }) =>
             isActive ? 'nav-link-active' : 'nav-link-sleep'
@@ -33,7 +33,7 @@ const NavLeft = () => {
             <HiTrendingUp />
           </i>
           <span className='navLeft-link-span'>Trending</span>
-        </NavLink>
+        </NavLink> */}
         <hr />
         <NavLink
           to='/history'

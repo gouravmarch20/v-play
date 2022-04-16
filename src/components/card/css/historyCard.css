@@ -1,0 +1,19 @@
+.history-card {
+  margin: 2rem;
+  padding-bottom: 1rem;
+}
+.info {
+  display: flex;
+}
+
+.info-left {
+  margin-left: 1rem;
+}
+.info-right {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+.history-delete-btn {
+  font-size: 2.5rem;
+  color: red;
+}

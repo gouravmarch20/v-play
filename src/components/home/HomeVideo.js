@@ -1,13 +1,16 @@
 import React from 'react'
 import { useHome } from '../../context/HomeContext'
+import { useVideo } from '../../context/VideoContext'
 import { getFilteredVideo, generateThumbnail } from '../../utils/homeUtils'
+import { getVideoDetails } from '../../utils/videoUtils'
 import { SiCoronarenderer } from 'react-icons/si'
 import './homeVideo.css'
 import { Link } from 'react-router-dom'
-import { useVideo } from '../../context/VideoContext'
+import { addToHistory } from '../../actions/historyAction'
 const HomeVideo = () => {
   const { homeState, homeDispatch } = useHome()
-  const { videoState, videoDispatch } = useVideo()
+  const {  videoDispatch } = useVideo()
+
   const allVideo = homeState?.homeVideo
   if (allVideo.length > 0) {
     var filteredVideos = getFilteredVideo(allVideo, homeState?.filterBy)
@@ -34,10 +37,8 @@ const HomeVideo = () => {
                 <Link
                   to={`watch/${_id}`}
                   onClick={() => {
-                    videoDispatch({
-                      type: 'ADD_TO_WATCH_HISTORY',
-                      payload: `${_id}`
-                    })
+                    const tempVideoToAdd = getVideoDetails(allVideo, _id)
+                    addToHistory(tempVideoToAdd ,videoDispatch)
                   }}
                 >
                   <img
