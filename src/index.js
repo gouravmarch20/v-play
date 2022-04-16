@@ -4,18 +4,18 @@ import App from './App'
 import './index.css'
 import { makeServer } from './server'
 import { BrowserRouter } from 'react-router-dom'
-import {HomeProvider} from './context/HomeContext'
+import { HomeProvider } from './context/HomeContext'
+import { VideoProvider } from './context/VideoContext'
 // Call make Server
 makeServer()
 
 ReactDOM.render(
-  // <React.StrictMode>
-    <BrowserRouter>
+  <BrowserRouter>
     <HomeProvider>
-      <App />
+      <VideoProvider>
+        <App />
+      </VideoProvider>
     </HomeProvider>
-    </BrowserRouter>
-  // </React.StrictMode>
-  ,
+  </BrowserRouter>,
   document.getElementById('root')
 )

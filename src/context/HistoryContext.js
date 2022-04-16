@@ -1,1 +1,2 @@
-GET_HOME_CATEGORY="GET_HOME_CATEGORY"
+import { createContext, useContext, useReducer, useEffect } from 'react'
+import moduleName from '../';

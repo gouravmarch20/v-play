@@ -12,7 +12,7 @@ const NavLeft = () => {
     <div className=''>
       <div className='navLeft-fixed'>
         <NavLink
-          to='/home'
+          to='/'
           className={({ isActive }) =>
             isActive ? 'nav-link-active' : 'nav-link-sleep'
           }
