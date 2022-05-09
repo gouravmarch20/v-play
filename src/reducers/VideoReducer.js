@@ -28,8 +28,7 @@ export const VideoReducer = (state, { type, payload }) => {
       return { ...state, watchedHistory: payload }
     }
     case REMOVE_WATCH_HISTORY:
-      console.log(payload, '32')
-      console.log('object')
+   
       return { ...state, watchedHistory: payload }
     case REMOVE_ALL_HISTORY:
       return { ...state, watchedHistory: payload }

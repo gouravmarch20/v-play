@@ -1,0 +1,25 @@
+
+
+.modal-container {
+  background-color: black;
+  color: white;
+  position: fixed;
+  min-height: 22vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  width: 50%;
+  padding: 1rem;
+}
+
+.modal-item {
+  display: inline-block;
+  width: 100%;
+  padding: var(--size-2);
+}
+
+.modal-item:hover {
+  background-color: var(--primary-light);
+  border-radius: var(--size-1);
+}
