@@ -25,7 +25,7 @@ export const SAVE_USER_INFO = 'SAVE_USER_INFO'
 export const AUTH_ERROR = 'AUTH_ERROR'
 export const LOG_OUT = 'LOG_OUT'
 // playlist 
-export const GET_PLAYLIST = 'GET_PLAYLIST'
+export const GET_PLAYLISTS = 'GET_PLAYLISTS'
 export const ADD_PLAYLIST = 'ADD_PLAYLIST'
 export const REMOVE_PLAYLIST = 'REMOVE_PLAYLIST'
 // playlist video

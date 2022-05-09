@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './videoDetail.css'
 import { getVideoDetails } from '../../utils/videoUtils'
 import { useHome } from '../../context/HomeContext'
 import { useAuth } from '../../context/AuthContext'
 import { useVideo } from '../../context/VideoContext'
+import { usePlaylist } from '../../context/PlaylistContext'
+import PlaylistModal from '../../components/playlist/PlaylistModal'
 import {
   addToWatchLater,
   removeFromWatchLater
 } from '../../actions/watchLaterAction'
+import { addPlayist, addVideoToPlaylist } from '../../actions/playlistAction'
 import { addLike, removeLike } from '../../actions/likeAction'
 import {
   MdThumbUp,
@@ -19,7 +22,11 @@ import {
 } from 'react-icons/md'
 
 const VidoeDetail = ({ videoId }) => {
-  // const [currentVideo, setCurrentVideo] = useState({})
+  const [modal, setModal] = useState(false)
+  const {
+    playlistDispatch,
+    playlistState: { playlists }
+  } = usePlaylist()
   const {
     homeState: { homeVideo }
   } = useHome()
@@ -44,8 +51,8 @@ const VidoeDetail = ({ videoId }) => {
       <div className='videoDetail-short'>
         <p className='title'>{title}</p>
         <p className='videoDetail-action-btn'>
-          <p className='views'>Views - {views}</p>
-          <p className='upload-date'>{uploadedOn}</p>
+          <span className='views'>Views - {views}</span>
+          <span className='upload-date'>{uploadedOn}</span>
         </p>
 
         <>
@@ -69,33 +76,48 @@ const VidoeDetail = ({ videoId }) => {
             </i>
           )}
         </>
-        <div>
-          <i className='icon'>
+
+        <>
+          {isVideoAlreadyLiked ? (
+            <i
+              className='icon'
+              onClick={() => {
+                removeLike(_id, token, videoDispatch)
+              }}
+            >
+              <MdThumbUp />
+            </i>
+          ) : (
+            <i
+              className='icon'
+              onClick={() => {
+                addLike(videoDetail, token, videoDispatch)
+              }}
+            >
+              <MdOutlineThumbUpAlt />
+            </i>
+          )}
+        </>
+        {modal && (
+          <PlaylistModal
+            videoId={videoId}
+            onClose={() => {
+              setModal(false)
+            }}
+            onAddClick={playlistName =>
+              addPlayist(playlistName, token, playlistDispatch)
+            }
+            // ? add video
+            // onPlaylistCheck={playlistId =>
+            //   addVideoToPlaylist(playlistId, _id, token, playlistDispatch)
+            // }
+          ></PlaylistModal>
+        )}
+        <>
+          <i className='icon' onClick={() => setModal(true)}>
             <MdPlaylistAdd />
           </i>
-
-          <>
-            {isVideoAlreadyLiked ? (
-              <i
-                className='icon'
-                onClick={() => {
-                  removeLike(_id, token, videoDispatch)
-                }}
-              >
-                <MdThumbUp />
-              </i>
-            ) : (
-              <i
-                className='icon'
-                onClick={() => {
-                  addLike(videoDetail, token, videoDispatch)
-                }}
-              >
-                <MdOutlineThumbUpAlt />
-              </i>
-            )}
-          </>
-        </div>
+        </>
       </div>
 
       <div className='videoDetail-s'>
