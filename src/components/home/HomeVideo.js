@@ -7,9 +7,14 @@ import { SiCoronarenderer } from 'react-icons/si'
 import './homeVideo.css'
 import { Link } from 'react-router-dom'
 import { addToHistory } from '../../actions/historyAction'
+import { useAuth } from "../../context/AuthContext";
+
 const HomeVideo = () => {
+  const {
+    authState: { token }
+  } = useAuth()
   const { homeState, homeDispatch } = useHome()
-  const {  videoDispatch } = useVideo()
+  const { videoDispatch } = useVideo()
 
   const allVideo = homeState?.homeVideo
   if (allVideo.length > 0) {
@@ -37,8 +42,9 @@ const HomeVideo = () => {
                 <Link
                   to={`watch/${_id}`}
                   onClick={() => {
+                    // TODO: ADD ALREADY ADDED CASE
                     const tempVideoToAdd = getVideoDetails(allVideo, _id)
-                    addToHistory(tempVideoToAdd ,videoDispatch)
+                    addToHistory(tempVideoToAdd, token, videoDispatch)
                   }}
                 >
                   <img

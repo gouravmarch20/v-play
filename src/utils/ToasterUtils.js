@@ -1,22 +1,19 @@
 import React from 'react'
-import toast, { Toaster } from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
 
-const notify = () => toast('Here is your toast.')
-
-export const ToasterUtils = () => {
+export const ToasterWrapper = () => {
   return (
     <Toaster
       position='top-right'
       reverseOrder={false}
       toastOptions={{
         style: {
-          minWidth: '260px'
+          minWidth: '300px'
         },
         success: {
-          duration: 2000
+          duration: 2500
         }
       }}
     />
   )
 }
-

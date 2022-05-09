@@ -1,17 +1,26 @@
 import { createContext, useContext, useReducer, useEffect } from 'react'
-// reducer
+import axios from 'axios'
+import { useAuth } from '../context/AuthContext'
+
+import { getHistory } from '../actions/historyAction'
 import { VideoReducer } from '../reducers'
-//action
 const initialState = {
+  loading: false,
+  error: null,
   watchedHistory: [],
-  likedVideo: []
+  likes: [],
+  watchLater: []
 }
 const VideoContext = createContext(initialState)
 
 const VideoProvider = ({ children }) => {
   const [videoState, videoDispatch] = useReducer(VideoReducer, initialState)
-
-  useEffect(() => {}, [])
+  const {
+    authState: { token }
+  } = useAuth()
+  useEffect(() => {
+    token && getHistory(token, videoDispatch)
+  }, [token])
 
   return (
     <VideoContext.Provider value={{ videoState, videoDispatch }}>

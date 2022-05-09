@@ -1,24 +1,28 @@
 import React, { useState } from 'react'
 import './css/signin.css'
 import { Link } from 'react-router-dom'
-import { loginUser } from '../../actions/authAction'
+import { useAuth } from '../../context/AuthContext'
 
 const SignIn = () => {
-  const [signInData, setSignInData] = useState({})
-  const handleInput = e => {
-    const tempName = e.target.name
-    const tempValue = e.target.value
-    setSignInData({ ...signInData, [tempName]: tempValue })
+  const {
+    authState: { error },
+    loginHandler
+  } = useAuth()
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const submitLoginData = () => {
+    loginHandler(email, password)
   }
-  const handleSubmit = e => {
-    e.preventDefault()
-    // console.log(signInData)
-    loginUser(signInData)
+  const submitLoginWithCredentials = () => {
+    setEmail('adarshbalika@gmail.com')
+    setPassword('adarshBalika123')
+    loginHandler('adarshbalika@gmail.com', 'adarshBalika123')
   }
   return (
     <div className='signin'>
       <h2>SignIn</h2>
-      <form className='signup-form'>
+      <form className='signup-form' onSubmit={e => e.preventDefault()}>
         <div className='input-box'>
           <label htmlFor='email' className='label'>
             Email
@@ -27,9 +31,9 @@ const SignIn = () => {
             className='input-style'
             type='email'
             placeholder='Enter your email'
-            name='email'
             id='email'
-            onChange={e => handleInput(e)}
+            value={email}
+            onChange={e => setEmail(e.target.value)}
             required
           />
         </div>
@@ -44,20 +48,26 @@ const SignIn = () => {
             className='input-style'
             type='password'
             placeholder=' password'
-            required
+            onChange={e => setPassword(e.target.value)}
             name='password'
             id='password'
-            onChange={e => handleInput(e)}
+            value={password}
           />
         </div>
 
         <div className=''>
-          <button className='signup-btn' onClick={handleSubmit}>
+          <button className='signup-btn' onClick={submitLoginData}>
             Login Now
           </button>
         </div>
         <div className=''>
-          <button className='signup-btn sign-test'> Test the app </button>
+          <button
+            className='signup-btn sign-test'
+            onClick={submitLoginWithCredentials}
+          >
+            {' '}
+            Test the app{' '}
+          </button>
         </div>
         <div className=''>
           <p className='signin-btn'>

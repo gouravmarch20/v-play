@@ -6,16 +6,19 @@ import { makeServer } from './server'
 import { BrowserRouter } from 'react-router-dom'
 import { HomeProvider } from './context/HomeContext'
 import { VideoProvider } from './context/VideoContext'
+import { AuthProvider } from './context/AuthContext'
 // Call make Server
 makeServer()
 
 ReactDOM.render(
   <BrowserRouter>
-    <HomeProvider>
-      <VideoProvider>
-        <App />
-      </VideoProvider>
-    </HomeProvider>
+    <AuthProvider>
+      <HomeProvider>
+        <VideoProvider>
+          <App />
+        </VideoProvider>
+      </HomeProvider>
+    </AuthProvider>
   </BrowserRouter>,
   document.getElementById('root')
 )

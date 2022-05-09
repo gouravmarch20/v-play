@@ -11,7 +11,6 @@ export const HistoryPage = () => {
           <NavLeft />
         </div>
         <HistoryCard />
-   
       </div>
     </>
   )
