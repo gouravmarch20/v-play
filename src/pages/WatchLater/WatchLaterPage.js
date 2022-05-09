@@ -1,4 +1,5 @@
 import React from 'react'
+import WatchLaterCard from '../../components/card/WatchLaterCard'
 import NavLeft from '../../components/navbar/nav-left/NavLeft'
 
 export const WatchLaterPage = () => {
@@ -7,6 +8,7 @@ export const WatchLaterPage = () => {
       <div className='nav-left'>
         <NavLeft />
       </div>
+      <WatchLaterCard />
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import LikeCard from '../../components/card/LikeCard'
 import NavLeft from '../../components/navbar/nav-left/NavLeft'
 
 export const LikedPage = () => {
@@ -9,6 +10,7 @@ export const LikedPage = () => {
         <div className='nav-left'>
           <NavLeft />
         </div>
+        <LikeCard />
       </div>
     </>
   )

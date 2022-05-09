@@ -1,4 +1,8 @@
-import { LOAD_ALL_CATEGORIES, FILTER_BY_CATEGORY,LOAD_ALL_HOME_VIDEO } from '../types'
+import {
+  LOAD_ALL_CATEGORIES,
+  FILTER_BY_CATEGORY,
+  LOAD_ALL_HOME_VIDEO
+} from '../types'
 export const HomeReducer = (state, { type, payload }) => {
   switch (type) {
     case LOAD_ALL_CATEGORIES:
