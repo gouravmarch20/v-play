@@ -20,12 +20,11 @@ export const PlaylistReducer = (state, { type, payload }) => {
       return { ...state, playlists: payload }
     case REMOVE_PLAYLIST:
       return { ...state, playlists: payload }
-    //   TODO: - DRY RUN
     case ADD_VIDEO_TO_PLAYLIST:
       return {
         ...state,
         playlists: state.playlists.map(playlist =>
-          playlist._id === playlist._id ? payload : playlist
+          playlist._id === payload._id ? payload : playlist
         )
       }
     case REMOVE_VIDEO_FROM_PLAYLIST:

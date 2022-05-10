@@ -100,6 +100,7 @@ const VidoeDetail = ({ videoId }) => {
         </>
         {modal && (
           <PlaylistModal
+            videoDetail={videoDetail}
             videoId={videoId}
             onClose={() => {
               setModal(false)
@@ -109,7 +110,12 @@ const VidoeDetail = ({ videoId }) => {
             }
             // ? add video
             // onPlaylistCheck={playlistId =>
-            //   addVideoToPlaylist(playlistId, _id, token, playlistDispatch)
+            //   addVideoToPlaylist(
+            //     playlistId,
+            //     videoDetail,
+            //     token,
+            //     playlistDispatch
+            //   )
             // }
           ></PlaylistModal>
         )}
