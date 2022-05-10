@@ -8,25 +8,37 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "ReactJS",
+    categoryName: "All",
     description:
       "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing",
   },
   {
     _id: uuid(),
-    categoryName: "Javascript",
+    categoryName: "Code",
+    description:
+      "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Investing",
     description:
       "Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application",
   },
   {
     _id: uuid(),
-    categoryName: "CSS",
+    categoryName: "Music",
     description:
       "Backend Development is also known as server-side development. It is everything that the users don't see and contains behind-the-scenes activities that occur when performing any action on a website.",
   },
   {
     _id: uuid(),
-    categoryName: "HTML",
+    categoryName: "Sports",
+    description:
+      "Backend Development is also known as server-side development. It is everything that the users don't see and contains behind-the-scenes activities that occur when performing any action on a website.",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Startup",
     description:
       "Backend Development is also known as server-side development. It is everything that the users don't see and contains behind-the-scenes activities that occur when performing any action on a website.",
   },

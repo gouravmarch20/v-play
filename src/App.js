@@ -8,6 +8,7 @@ import {
   HistoryPage,
   LikedPage,
   PlaylistPage,
+  PlaylistVideoPage,
   TrendingPage,
   WatchLaterPage,
   NotFoundPage,
@@ -16,7 +17,7 @@ import {
   SignInPage
 } from './pages/index'
 import { ToasterWrapper } from './utils/ToasterUtils'
-import { useAuth } from "./context/AuthContext";
+import { useAuth } from './context/AuthContext'
 
 const Router = () => {
   return (
@@ -27,6 +28,7 @@ const Router = () => {
       <Route path='/liked' element={<LikedPage />} />
       <Route path='/trending' element={<TrendingPage />} />
       <Route path='/playlist' element={<PlaylistPage />} />
+      <Route path='/playlists/:playlistId' element={<PlaylistVideoPage />} />
       <Route path='/watch-later' element={<WatchLaterPage />} />
       <Route path='/signup' element={<SignUpPage />} />
       <Route path='/signin' element={<SignInPage />} />

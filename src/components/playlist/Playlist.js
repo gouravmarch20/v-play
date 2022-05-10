@@ -3,8 +3,11 @@ import { useAuth } from '../../context/AuthContext'
 import { usePlaylist } from '../../context/PlaylistContext'
 import { removePlaylist } from '../../actions/playlistAction'
 import { MdDeleteForever } from 'react-icons/md'
+import { useNavigate } from 'react-router-dom'
 
 const Playlist = () => {
+  let navigate = useNavigate()
+
   const {
     playlistState: { playlists },
     playlistDispatch
@@ -15,12 +18,15 @@ const Playlist = () => {
   return (
     <>
       <div className='history-card-warper'>
-        {console.log(playlists)}
         {playlists.map(playlist => {
           const { title, _id } = playlist
 
           return (
-            <div className='history-card' key={_id}>
+            <div
+              className='history-card'
+              key={_id}
+              onClick={() => navigate(`/playlists/${_id}`)}
+            >
               <h1>{title}</h1>
               {/* <img
                 src={generateThumbnail(_id)}

@@ -2,10 +2,14 @@ import React, { useState } from 'react'
 import './css/playlistModel.css'
 import { RiCloseCircleFill } from 'react-icons/ri'
 import { usePlaylist } from '../../context/PlaylistContext'
-import { addPlayist, addVideoToPlaylist } from '../../actions/playlistAction'
+import {
+  addPlayist,
+  addVideoToPlaylist,
+  toggleCheckbox
+} from '../../actions/playlistAction'
 import { useAuth } from '../../context/AuthContext'
 
-const PlaylistModal = ({ videoId, onClose, onAddClick, onPlaylistCheck }) => {
+const PlaylistModal = ({ videoId, onClose, onPlaylistCheck, videoDetail }) => {
   const [title, setTitle] = useState('')
   const {
     authState: { token, isLoggedIn }
@@ -14,7 +18,6 @@ const PlaylistModal = ({ videoId, onClose, onAddClick, onPlaylistCheck }) => {
     playlistDispatch,
     playlistState: { playlists }
   } = usePlaylist()
-
   return (
     <div className='model'>
       <div className='modal-container'>
@@ -23,26 +26,39 @@ const PlaylistModal = ({ videoId, onClose, onAddClick, onPlaylistCheck }) => {
           <RiCloseCircleFill />
         </button>
         <hr />
-        {/* <div className='model-options'>
+        <div className='model-options'>
           {playlists &&
-            playlists.map(playlist => (
-              <div key={playlist._id}>
-                <label htmlFor='' className='modal-item'>
-                  <input
-                    type='checkbox'
-                    name={playlist.name}
-                    id={playlist.name}
-                    checked={playlist.videos.some(({ _id }) => _id === videoId)}
-                    onChange={() => {
-                      onPlaylistCheck(playlist._id)
-                      onClose()
-                    }}
-                  />
-                  {playlist.name}
-                </label>
-              </div>
-            ))}
-        </div> */}
+            playlists.map(playlist => {
+              const { _id: playlistId, title } = playlist
+              const isVideoAlreadyInPlaylist = playlist.videos?.find(
+                video => video._id === videoId
+              )
+              return (
+                <div key={playlistId}>
+                  <label className='modal-item'>
+                    {title}
+                    <input
+                      type='checkbox'
+                      className='custom-input'
+                      name='playlist_checkbox'
+                      checked={isVideoAlreadyInPlaylist || false}
+                      onChange={() => {
+                        toggleCheckbox(
+                          isVideoAlreadyInPlaylist,
+                          playlist._id,
+                          videoId,
+                          videoDetail,
+                          token,
+                          playlistDispatch
+                        )
+                        onClose()
+                      }}
+                    />
+                  </label>
+                </div>
+              )
+            })}
+        </div>
 
         <div>
           <input
@@ -55,8 +71,9 @@ const PlaylistModal = ({ videoId, onClose, onAddClick, onPlaylistCheck }) => {
             disabled={title === ''}
             // className="btn btn-primary"
             onClick={() => {
-              onClose()
               addPlayist(title, token, playlistDispatch)
+              onClose()
+              setTitle('')
               // onAddClick(title)
             }}
           >
