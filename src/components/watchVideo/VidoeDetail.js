@@ -10,7 +10,7 @@ import {
   addToWatchLater,
   removeFromWatchLater
 } from '../../actions/watchLaterAction'
-import { addPlayist, addVideoToPlaylist } from '../../actions/playlistAction'
+import { addPlayist } from '../../actions/playlistAction'
 import { addLike, removeLike } from '../../actions/likeAction'
 import {
   MdThumbUp,
@@ -108,15 +108,6 @@ const VidoeDetail = ({ videoId }) => {
             onAddClick={playlistName =>
               addPlayist(playlistName, token, playlistDispatch)
             }
-            // ? add video
-            // onPlaylistCheck={playlistId =>
-            //   addVideoToPlaylist(
-            //     playlistId,
-            //     videoDetail,
-            //     token,
-            //     playlistDispatch
-            //   )
-            // }
           ></PlaylistModal>
         )}
         <>

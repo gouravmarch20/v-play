@@ -1,10 +1,91 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { MdDeleteForever } from 'react-icons/md'
+import { usePlaylist } from '../../context/PlaylistContext'
+import { useHome } from '../../context/HomeContext'
+import { generateThumbnail } from '../../utils/homeUtils'
+import { deleteVideoFromPlaylist } from '../../actions/playlistAction'
+import { useParams } from 'react-router-dom'
 
 const PlaylistVideo = () => {
+  const {
+    playlistState: { playlists },
+    playlistDispatch
+  } = usePlaylist()
+  const { homeState, homeDispatch } = useHome()
+  const allVideo = homeState?.homeVideo
+  const { playlistId } = useParams()
+  const playlistAddedVideos = (playlists, playlistId) => {
+    const playlistVideos = playlists?.find(
+      playlist => playlist._id === playlistId
+    )
+
+    const { videos } = playlistVideos || []
+    return videos
+  }
+
+  const [playlistVideo, setPlaylistVideo] = useState([])
+  useEffect(() => {
+    setPlaylistVideo(playlistAddedVideos(playlists, playlistId))
+  }, [playlistId, playlists])
+
   return (
     <div>
-      PlaylistVideo
-      <h2>PlaylistVideo</h2>
+      {playlistVideo?.length >= 1 ? (
+        <div>
+          <>
+            <div className='history-card-warper'>
+              {playlistVideo?.map(video => {
+                const {
+                  avatar,
+                  channelName,
+                  description,
+                  id,
+                  title,
+                  uploadedOn,
+                  views,
+                  _id
+                } = video
+                return (
+                  <div key={_id} className='history-card'>
+                    <img
+                      src={generateThumbnail(_id)}
+                      alt='the video deleted form youtube server'
+                      className='thumbnail-responsive'
+                    />
+                    <div className='info'>
+                      <div className='info-left'>
+                        <p>{title.substring(0, 30)}</p>
+                      </div>
+                      <div className='info-right'>
+                        <i
+                          className='history-delete-btn'
+                          onClick={() => {
+                            deleteVideoFromPlaylist(
+                              playlistId,
+                              _id,
+                              'token',
+                              playlistDispatch
+                            )
+                          }}
+                        >
+                          <MdDeleteForever />
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </>
+        </div>
+      ) : (
+        <div>
+          <h3>asf</h3>
+          <h3>asf</h3>
+          <h3>asf</h3>
+          <h3>asf</h3>
+        </div>
+      )}
     </div>
   )
 }

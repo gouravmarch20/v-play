@@ -33,7 +33,7 @@ const Playlist = () => {
                 alt='the video deleted form youtube server'
                 className='thumbnail-responsive'
               /> */}
-
+ 
               <div className='info'>
                 {/* <div className='info-left'>
                   <p>{title.substring(0, 30)}</p>

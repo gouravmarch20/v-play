@@ -31,7 +31,6 @@ export const getPlaylists = async (token, playlistDispatch) => {
   }
 }
 export const addPlayist = async (title, token, dispatch) => {
-  // const toastId = toast.loading('creating playlist')
   const toastId = toast.loading('Creating playlist...')
 
   try {
@@ -85,8 +84,6 @@ export const addVideoToPlaylist = async (
   token,
   playlistDispatch
 ) => {
-  console.log(video)
-  console.log(playlistId)
   const toastId = toast.loading('Adding video to playlist...')
   try {
     const response = await axios.post(
@@ -97,11 +94,11 @@ export const addVideoToPlaylist = async (
       }
     )
     const { data, status } = response
-    console.log(data)
     if (status === 200 || status === 201) {
       toast.success('Video added to playlist', {
         id: toastId
       })
+      console.log(data)
       playlistDispatch({ type: ADD_VIDEO_TO_PLAYLIST, payload: data.playlist })
     }
   } catch (error) {
@@ -111,36 +108,38 @@ export const addVideoToPlaylist = async (
     playlistDispatch({ type: ERROR, payload: error.response })
   }
 }
-// export const deleteVideoFromPlaylist = async (
-//   playlistId,
-//   videoId,
-//   token,
-//   playlistDispatch
-// ) => {
-//   const toastId = toast.loading('Removing video...')
-//   try {
-//     const { data, status } = await axios.delete(
-//       `/api/user/playlists/${playlistId}/${videoId}`,
-//       {
-//         headers
-//       }
-//     )
-//     if (status === 200) {
-//       toast.success('Video removed successfully.', {
-//         id: toastId
-//       })
-//       playlistDispatch({
-//         type: REMOVE_VIDEO_FROM_PLAYLIST,
-//         payload: data.playlist
-//       })
-//     }
-//   } catch (error) {
-//     toast.error('Some error occured. Try Again.', {
-//       id: toastId
-//     })
-//     playlistDispatch({ type: ERROR, payload: error.response })
-//   }
-// }
+export const deleteVideoFromPlaylist = async (
+  playlistId,
+  videoId,
+  token,
+  playlistDispatch
+) => {
+  const toastId = toast.loading('Removing video...')
+  try {
+    const { data, status } = await axios.delete(
+      `/api/user/playlists/${playlistId}/${videoId}`,
+      {
+        headers
+      }
+    )
+    console.log(data.playlist)
+    if (status === 200) {
+      toast.success('Video removed successfully.', {
+        id: toastId
+      })
+
+      playlistDispatch({
+        type: REMOVE_VIDEO_FROM_PLAYLIST,
+        payload: data.playlist
+      })
+    }
+  } catch (error) {
+    toast.error('Some error occured. Try Again.', {
+      id: toastId
+    })
+    playlistDispatch({ type: ERROR, payload: error.response })
+  }
+}
 export const toggleCheckbox = (
   isVideoAlreadyInPlaylist,
   playlistId,
@@ -150,6 +149,5 @@ export const toggleCheckbox = (
   dispatch
 ) =>
   isVideoAlreadyInPlaylist
-    ? ''
-    : // ? deleteVideoFromPlaylist(playlistId, videoId, token, dispatch)
-      addVideoToPlaylist(playlistId, video, token, dispatch)
+    ? console.log('already added ')
+    : addVideoToPlaylist(playlistId, video, token, dispatch)
