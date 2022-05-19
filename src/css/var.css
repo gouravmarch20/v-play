@@ -1,0 +1,85 @@
+:root {
+  --color-sucess: #4dd637;
+  --color-info: #03c6c7;
+  --color-wait: #f4be2c;
+  --color-space: #03203c;
+  --color-danger: #d82e2f;
+  --color-fancy: #e07c24;
+  --color-blue: #3944f7;
+  --color-neon: #39ff14;
+
+  --color-text-heading: #000000;
+  --color-text-subheading: #2e2e2e;
+  --color-text-content: #5c5c5c;
+  --color-text-subheading: #9a9a9a;
+
+  --color-text-green: #02b290;
+  --color-text-blue-heading: #3944f7;
+  --color-text-blue-subheading: #12b0e8;
+}
+
+/* grey shades  */
+.text-grey-100 {
+  color: #c5c5c5;
+  font-weight: 600;
+}
+.text-grey-200 {
+  color: #aeaeae;
+  font-weight: 600;
+}
+.text-grey-300 {
+  color: #979797;
+  font-weight: 600;
+}
+.text-grey-400 {
+  color: #808080;
+  font-weight: 600;
+}
+.text-grey-500 {
+  color: #696969;
+  font-weight: 600;
+}
+.text-grey-600 {
+  color: #525252;
+  font-weight: 600;
+}
+.text-grey-700 {
+  color: #3b3b3b;
+  font-weight: 600;
+}
+
+/* text color  */
+.text-danger {
+  color: var(--color-danger);
+  font-weight: 500;
+}
+.text-info {
+  color: var(--color-info);
+  font-weight: 500;
+}
+
+.text-green {
+  color: var(--color-text-green);
+  font-weight: 500;
+}
+.color-text-neon {
+  color: var(--color-neon);
+}
+.text-blue-subheading {
+  color: var(--color-text-blue-subheading);
+}
+.color-fancy {
+  color: var(--color-fancy);
+  font-weight: 600;
+}
+
+/* background  */
+
+.bg-light {
+  background-color: #cad5e2;
+}
+
+/* hover  */
+.color-fancy:hover {
+  color: black;
+}

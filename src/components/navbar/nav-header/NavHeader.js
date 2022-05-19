@@ -1,14 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useState } from 'react'
 import './NavHeader.css'
 import { NavLink, Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../context/AuthContext'
 import { MdDarkMode, MdOutlineFlashlightOn } from 'react-icons/md'
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
+import { FaUserCircle } from 'react-icons/fa'
 
 const NavHeader = () => {
+  // TODO: LOGOUT OPTIMISE
   const {
-    authState: { isLoggedIn },
+    authState: { userInfo, isLoggedIn },
     logoutHandler
   } = useAuth()
+  const [dropdown, setDropdown] = useState(false)
+  const toggleDropdown = () => setDropdown(prev => !prev)
+  const openDropdown = () => setDropdown(true)
+  const closeDropdown = () => setDropdown(false)
   return (
     <div
       className='navbar'
@@ -91,17 +98,38 @@ const NavHeader = () => {
               <button className='btn-auth'>SignIn</button>
             </NavLink>
           )}
-
           {isLoggedIn && (
-            <NavLink
-              to=''
-              className='navbar-link 
-'
+            <div
+              className='userinfo-signout-toggle'
+              onClick={toggleDropdown}
+              onMouseEnter={openDropdown}
+              onMouseLeave={closeDropdown}
             >
-              <button className='btn-auth' onClick={logoutHandler}>
-                Signout
-              </button>
-            </NavLink>
+              <div>
+                <i className='avatar-icon'>
+                  {' '}
+                  <FaUserCircle />
+                </i>
+                {userInfo?.user?.firstName}{' '}
+                <span> {!dropdown ? <FiChevronDown /> : <FiChevronUp />}</span>
+              </div>
+
+              {dropdown ? (
+                <div className='dropdown-box-container'>
+                  <div className='dropdown-box-flex'>
+                    <p className='text-sm bold-700 text-center text-black mt-10 mb-10'>
+                      Welcome to v - player ❤️
+                    </p>
+                    <button
+                      className='btn-danger btn-signout'
+                      onClick={logoutHandler}
+                    >
+                      Signout
+                    </button>
+                  </div>
+                </div>
+              ) : null}
+            </div>
           )}
         </div>
       </nav>

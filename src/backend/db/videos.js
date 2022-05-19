@@ -3,29 +3,6 @@
  * You can add videos of your wish with different attributes
  * */
 
-// export const videos = [
-//   {
-//     _id: 'Wo5dMEP_BbI',
-//     title: 'Awesome Video about Coding',
-//     description:
-//       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.',
-//     creator: 'Soham Shah',
-//     categoryName: 'Frontend Development',
-
-//     avatar:
-//       'https://yt3.ggpht.com/ytc/AKedOLQnvobEXpzHCxB1g-q2aXbRDzSaznFVHo5OdFML=s48-c-k-c0x00ffffff-no-rj'
-
-//     //?  view , like , categoryName , categoryName , upload date
-//   },
-//   {
-//     _id: 'F_Riqjdh2oM',
-//     title: 'Neural Networks from Scratch - P.1 Intro and Neuron Code',
-//     creator: 'Sentdex',    categoryName: "backend Development",
-
-//     description:
-//       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.'
-//   }
-// ]
 export const videos = [
   {
     _id: 'No8qdcVYiQw',
@@ -83,7 +60,7 @@ export const videos = [
     channelName: 'Akshay Saini',
     views: 136615,
     uploadedOn: 'Oct 23, 2020',
-    categoryName: 'Javascript',
+    categoryName: 'Code',
     avatar:
       'https://yt3.ggpht.com/ytc/AKedOLR8gqN3fHHNYbehMcsJ49rapBPhJMGPYSrl6YQyNg=s48-c-k-c0x00ffffff-no-rj',
     description:
@@ -91,16 +68,21 @@ export const videos = [
   },
   // ! sports
   {
-    _id: 'UayIQoI9eHg',
-    title: `Antoine Griezmann's UEFA EURO 2016 goals`,
-    channelName: 'UEFA',
-    views: 6505622,
-    uploadedOn: 'Jul 11, 2016',
+    _id: 'i2HZ_iFcL4w',
+    title: `Kylian Mbappe expected to join Real Madrid despite PSG offering to double his wages`,
+    channelName: 'Sky Sports News     ',
+    views: 148034,
+    uploadedOn: 'May 18, 2022',
     categoryName: 'Sports',
     avatar:
       'https://yt3.ggpht.com/ytc/AKedOLRH21FP6F7Otit3trUHGV4PF3xns5acAjSiot1nbNE=s48-c-k-c0x00ffffff-no-rj',
-    description:
-      'France star Antoine Griezmann has won the adidas Golden Boot at UEFA EURO 2016. See every one of his goals.'
+    avatar:
+      'https://yt3.ggpht.com/ytc/AKedOLQWmSEqfMClWyLg7rWWabnqkuvuVGN1WCbgAFuBKQ=s48-c-k-c0x00ffffff-no-rj',
+    description: `Paris Saint-Germain are exhausting every avenue to retain Kylian Mbappe, but the expectation is he will soon confirm his decision to become Real Madrid's marquee signing. 
+
+      The French champions have offered the 23-year-old a pay package understood to be double his current terms and around £4m a month, making him the highest earner in the game.
+      
+      An extension would also secure a mammoth signing-on figure in the region of £100m, and includes concessions over image rights as well as bonuses for goals, Ballon d'Or honours, and Champions League success.`
   },
   {
     _id: 'TlK1MG1l1lI',

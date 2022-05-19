@@ -4,8 +4,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-.label{
-  margin-left: .5rem;
+.label {
+  margin-left: 0.5rem;
   font-weight: 500;
   font-size: 1.5rem;
 }
@@ -18,7 +18,6 @@
   box-shadow: 0 5px 10px rgba(0, 4, 0, 0.6);
   font-family: "Poppins", sans-serif;
 }
-
 
 .input-box {
   height: 52px;
@@ -42,7 +41,7 @@
 }
 /* btn */
 .signup-btn {
-  color: #fff ;
+  color: #fff;
   letter-spacing: 1px;
   border: none;
   background: #4070f4;
@@ -50,10 +49,10 @@
   border-radius: 1rem;
   cursor: pointer;
   display: flex;
- margin : 1rem auto;
+  margin: 1rem auto;
 }
-.signin-btn{
-  font-size:1.5rem;
+.signin-btn {
+  font-size: 1.5rem;
   color: grey;
 }
 .signin-btn a {

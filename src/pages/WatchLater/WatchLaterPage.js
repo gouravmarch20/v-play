@@ -8,6 +8,7 @@ export const WatchLaterPage = () => {
       <div className='nav-left'>
         <NavLeft />
       </div>
+
       <WatchLaterCard />
     </div>
   )

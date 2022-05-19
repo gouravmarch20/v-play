@@ -4,7 +4,6 @@
   padding: 1rem;
   flex-wrap: wrap;
   background-color: black;
-  color: wheat;
   min-height: 13vh;
   font-size: 2.3rem;
 }
@@ -76,4 +75,30 @@
   font-size: 18px;
   padding: 0.4rem;
   border-radius: 1rem;
+}
+.userinfo-signout-toggle {
+  color: white;
+  padding: 0.3rem 0.2rem;
+  width: 12vw;
+  max-height: 7vh;
+}
+.avatar-icon {
+  margin: 0.2rem 0.5rem;
+  padding: 0.1rem;
+}
+.dropdown-box-container {
+  background-color: #51e1ed;
+  width: 100%;
+  height: 15vh;
+}
+.dropdown-box-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn-signout {
+  margin: 1rem;
+  border: none;
+  padding: 0.6rem 1rem;
 }

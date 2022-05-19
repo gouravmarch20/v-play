@@ -1,0 +1,15 @@
+.login-message-heading4 {
+  font-weight: 800;
+  color: #5a20cb;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 3.2rem;
+}
+.auth-login-align {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+}

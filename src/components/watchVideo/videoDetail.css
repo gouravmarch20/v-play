@@ -1,11 +1,10 @@
 .videoDetail {
-  width: 70vw;
-  margin-top: 1rem;
+  /* min-width: 70vw; */
 }
 .videoDetail-short {
   display: flex;
   align-items: center;
-
+  margin: 2rem;
   padding: 1rem;
 }
 .videoDetail-long {
