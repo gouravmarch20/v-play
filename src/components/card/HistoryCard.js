@@ -21,17 +21,19 @@ const HistoryCard = () => {
   return (
     <>
       {token && isLoggedIn ? (
-        <div className=' history-card-warpe'>
+        <div className=' '>
           {watchedHistory.length === 0 ? (
             <>
-              <h1>No watched history</h1>
+              <div className='flex-align-center'>
+                <h1 className='heading '> not watched any video</h1>
+              </div>
             </>
           ) : (
             <>
               <div className='history-header'>
-                <h2 className='history-heading'>history</h2>
+                <h2 className='subheading ml-10h'>Your watched history</h2>
                 <button
-                  className='cta align-end'
+                  className=' btn btn-info btn-align-end'
                   onClick={() => {
                     clearAllHistory(token, videoDispatch)
                   }}
@@ -54,17 +56,20 @@ const HistoryCard = () => {
 
                       <div className='info'>
                         <div className='info-left'>
-                          <p>{title.substring(0, 30)}</p>
+                          <p className='content '>
+                            {title.substring(0, 50)}
+                            <span>{title.length >= 50 ? '...' : ''}</span>
+                          </p>
                         </div>
                         <div className='info-right'>
-                          <i
-                            className='history-delete-btn'
+                          <button
+                            className='btn btn-danger'
                             onClick={() => {
                               removeFromHistory(_id, token, videoDispatch)
                             }}
                           >
                             <MdDeleteForever />
-                          </i>
+                          </button>
                         </div>
                       </div>
                     </div>

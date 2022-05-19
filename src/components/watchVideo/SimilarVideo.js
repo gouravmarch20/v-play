@@ -32,12 +32,12 @@ const SimilarVideo = ({ videoId }) => {
 
   return (
     <>
-      <h2 className='text-center mt-1 '>Similar Video</h2>
+      <h2 className='text-center mt-10 heading '>Similar Video</h2>
 
       {
         <div>
           {data?.length === 0 ? (
-            <h2>no vi found</h2>
+            <h2 className='heading'>no video found</h2>
           ) : (
             <div className='home-video-flex'>
               {data?.map((video, index) => {
@@ -71,8 +71,14 @@ const SimilarVideo = ({ videoId }) => {
 
                     <div className='home-video-info'>
                       <div className='home-video-miniDescription'>
-                        <p>{title.substring(0, 25) + '...'}</p>
-                        <p>{channelName}</p>
+                        <p className='content'>
+                          {title.substring(0, 40)}{' '}
+                          <span>{title.length >= 50 ? '...' : ''}</span>
+                        </p>{' '}
+                        <p className=' bold-900 text-center mb-10'>
+                          <span className='content'>by : </span>
+                          {channelName}
+                        </p>
                       </div>
                     </div>
                   </div>

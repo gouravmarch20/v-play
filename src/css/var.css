@@ -60,7 +60,6 @@
 
 .text-green {
   color: var(--color-text-green);
-  font-weight: 500;
 }
 .color-text-neon {
   color: var(--color-neon);
@@ -82,4 +81,13 @@
 /* hover  */
 .color-fancy:hover {
   color: black;
+}
+.bg-danger-light {
+  background-color: #ff6263;
+  /* background-color: #E03B8B; */
+  /* background-color: #E07C24; */
+}
+
+.text-color-teal{
+  color: #02b290;
 }

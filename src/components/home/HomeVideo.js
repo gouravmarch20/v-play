@@ -57,7 +57,10 @@ const HomeVideo = () => {
                 <div className='home-video-info'>
                   <img className='avatar-round' src={avatar} alt='no' />
                   <div className='home-video-miniDescription'>
-                    <p>{title.substring(0, 30)}</p>
+                    <p className=''>
+                      {title.substring(0, 40)}{' '}
+                      <span>{title.length >= 50 ? '...' : ''}</span>
+                    </p>{' '}
                     <p>{channelName}</p>
                     <div>
                       <p>
@@ -65,9 +68,6 @@ const HomeVideo = () => {
                       </p>
                       <p>{uploadedOn}</p>
                     </div>
-                  </div>
-                  <div className='home-video-quickAction'>
-                    <SiCoronarenderer />
                   </div>
                 </div>
               </div>

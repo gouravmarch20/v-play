@@ -1,24 +1,48 @@
 .modal-container {
-  background-color: black;
+  background-color: #2827cc;
   color: white;
   position: fixed;
-  min-height: 22vh;
+
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 1rem;
-  width: 50%;
- 
-  padding: 1rem;
-}
+  width: 45%;
+  height: 400px;
 
+  padding: 1rem;
+  display: flex;
+  overflow: hidden;
+  overflow-y: scroll;
+  flex-direction: column;
+}
+.modal-container::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-container::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 4px;
+}
+.modal-main {
+  background-color: lavender;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .modal-item {
-  display: inline-block;
-  width: 100%;
-  padding: 1rem;
+  /* padding: 2rem; */
+  /* margin: 1rem 0rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-.modal-item:hover {
-  background-color: var(--primary-light);
-  border-radius: var(--size-1);
+.checkbox-item {
+  margin-left: 1rem;
+}
+.create-playlist {
+  display: flex;
+
+  justify-content: center;
 }

@@ -1,0 +1,7 @@
+.input-item {
+  padding: 1rem;
+  border: none;
+}
+.input-item:focus {
+  border: 2px solid green;
+}

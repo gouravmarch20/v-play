@@ -10,3 +10,9 @@ textarea {
 .img-round {
   border-radius: 50%;
 }
+@import url("./css/var.css");
+@import url("./css/Button.css");
+@import url("./css/Auth.css");
+@import url("./css/utils.css");
+@import url("./css/oneComand.css");
+@import url("./css/input.css");

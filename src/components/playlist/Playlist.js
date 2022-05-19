@@ -5,6 +5,7 @@ import { removePlaylist } from '../../actions/playlistAction'
 import { MdDeleteForever } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import './css/playlist.css'
 const Playlist = () => {
   let navigate = useNavigate()
 
@@ -15,44 +16,56 @@ const Playlist = () => {
   const {
     authState: { token, isLoggedIn }
   } = useAuth()
+
   return (
     <>
       {token && isLoggedIn ? (
-        <div className='history-card-warper'>
-          {playlists.map(playlist => {
-            const { title, _id } = playlist
-
-            return (
-              <div
-                className='history-card'
-                key={_id}
-                onClick={() => navigate(`/playlists/${_id}`)}
-              >
-                <h1>{title}</h1>
-                {/* <img
-                src={generateThumbnail(_id)}
-                alt='the video deleted form youtube server'
-                className='thumbnail-responsive'
-              /> */}
-
-                <div className='info'>
-                  {/* <div className='info-left'>
-                  <p>{title.substring(0, 30)}</p>
-                </div> */}
-                  <div className='info-right'>
-                    <i
-                      className='history-delete-btn'
-                      onClick={() => {
-                        removePlaylist(_id, token, playlistDispatch)
-                      }}
-                    >
-                      <MdDeleteForever />
-                    </i>
-                  </div>
-                </div>
+        <div>
+          {playlists.length === 0 ? (
+            <>
+              <div className='flex-align-center'>
+                <h1 className='heading '> empty playist</h1>
               </div>
-            )
-          })}
+            </>
+          ) : (
+            <div className='flex-align-center-playlist-card'>
+              {playlists.map(playlist => {
+                const { title, _id, videos } = playlist
+
+                return (
+                  <div className='playlist-card cursor-pointer '>
+                    <section
+                      key={_id}
+                      onClick={() => navigate(`/playlists/${_id}`)}
+                      className='playlist-video-section'
+                    >
+                      <div className=''>
+                        <p className='subheading '>
+                          {' '}
+                          <span className='content'>Playlist name - </span>{' '}
+                          {title}
+                        </p>
+                        <p className='subheading'>
+                          <span className='content '>Total Video Added -</span>{' '}
+                          {videos.length}{' '}
+                        </p>
+                      </div>
+                    </section>
+                    <div className='bg-danger-light flex-center-single-item'>
+                      <button
+                        className='btn btn-danger p-1'
+                        onClick={() => {
+                          removePlaylist(_id, token, playlistDispatch)
+                        }}
+                      >
+                        <MdDeleteForever />
+                      </button>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )}
         </div>
       ) : (
         <div className='auth-login-align'>

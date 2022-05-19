@@ -33,11 +33,18 @@ const PlaylistVideo = () => {
   useEffect(() => {
     setPlaylistVideo(playlistAddedVideos(playlists, playlistId))
   }, [playlistId, playlists])
+
   return (
     <>
       {token && isLoggedIn ? (
         <div>
-          {playlistVideo?.length >= 1 ? (
+          {playlistVideo.length === 0 ? (
+            <>
+              <div className='flex-align-center'>
+                <h2 className='heading '> no  video added to playlist</h2>
+              </div>
+            </>
+          ) : (
             <div>
               <>
                 <div className='history-card-warper'>
@@ -61,11 +68,14 @@ const PlaylistVideo = () => {
                         />
                         <div className='info'>
                           <div className='info-left'>
-                            <p>{title.substring(0, 30)}</p>
+                            <p className='content'>
+                              {title.substring(0, 40)}{' '}
+                              <span>{title.length >= 40 ? '...' : ''}</span>
+                            </p>{' '}
                           </div>
                           <div className='info-right'>
-                            <i
-                              className='history-delete-btn'
+                            <button
+                              className='btn btn-danger'
                               onClick={() => {
                                 deleteVideoFromPlaylist(
                                   playlistId,
@@ -76,7 +86,7 @@ const PlaylistVideo = () => {
                               }}
                             >
                               <MdDeleteForever />
-                            </i>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -84,13 +94,6 @@ const PlaylistVideo = () => {
                   })}
                 </div>
               </>
-            </div>
-          ) : (
-            <div>
-              <h3>asf</h3>
-              <h3>asf</h3>
-              <h3>asf</h3>
-              <h3>asf</h3>
             </div>
           )}
         </div>

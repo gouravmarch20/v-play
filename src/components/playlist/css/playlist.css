@@ -1,0 +1,22 @@
+.flex-align-center-playlist-card {
+  display: flex;
+
+  margin: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.playlist-card {
+  margin: 1rem;
+  height: 38vh;
+  width: 25vw;
+}
+.playlist-video-section {
+  margin-top: 1rem;
+  background-color: #0d0d0d;
+  background-color: #cad5e2;
+  height: 60%;
+}
+.playsist-video-info-align-center {
+  background-color: red;
+}

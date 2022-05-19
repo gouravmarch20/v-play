@@ -18,70 +18,71 @@ const PlaylistModal = ({ videoId, onClose, onPlaylistCheck, videoDetail }) => {
     playlistDispatch,
     playlistState: { playlists }
   } = usePlaylist()
+
   return (
-    <div className='model'>
-      <div className='modal-container'>
-        <p>Save to ..</p>
-        <button className='btn' onClick={onClose}>
+    // <div >
+    <main className='modal-container'>
+      <div className='modal-main mb-10'>
+        <p className='content bold-900 text-md  '>Save to </p>
+        <button className='btn btn-danger' onClick={onClose}>
           <RiCloseCircleFill />
         </button>
-        <hr />
-        <div className='model-options'>
-          {playlists &&
-            playlists.map(playlist => {
-              const { _id: playlistId, title } = playlist
-              const isVideoAlreadyInPlaylist = playlist.videos?.find(
-                video => video._id === videoId
-              )
-              return (
-                <div key={playlistId}>
-                  <label className='modal-item'>
-                    {title}
-                    <input
-                      type='checkbox'
-                      className='custom-input'
-                      name='playlist_checkbox'
-                      checked={isVideoAlreadyInPlaylist || false}
-                      onChange={() => {
-                        toggleCheckbox(
-                          isVideoAlreadyInPlaylist,
-                          playlist._id,
-                          videoId,
-                          videoDetail,
-                          token,
-                          playlistDispatch
-                        )
-                        onClose()
-                      }}
-                    />
-                  </label>
-                </div>
-              )
-            })}
-        </div>
-
-        <div>
-          <input
-            className=''
-            type='text'
-            placeholder='Enter playlist name...'
-            onChange={e => setTitle(e.target.value)}
-          />
-          <button
-            disabled={title === ''}
-            // className="btn btn-primary"
-            onClick={() => {
-              addPlayist(title, token, playlistDispatch)
-              onClose()
-              setTitle('')
-              // onAddClick(title)
-            }}
-          >
-            Add
-          </button>
-        </div>
       </div>
-    </div>
+
+      <div className='model-options'>
+        {playlists &&
+          playlists.map(playlist => {
+            const { _id: playlistId, title } = playlist
+            const isVideoAlreadyInPlaylist = playlist.videos?.find(
+              video => video._id === videoId
+            )
+            return (
+              <div key={playlistId}>
+                <label className='modal-item '>
+                  <p className='text-lg  '> {title}</p>
+                  <input
+                    type='checkbox'
+                    className='checkbox-item '
+                    name='playlist_checkbox'
+                    checked={isVideoAlreadyInPlaylist || false}
+                    onChange={() => {
+                      toggleCheckbox(
+                        isVideoAlreadyInPlaylist,
+                        playlist._id,
+                        videoId,
+                        videoDetail,
+                        token,
+                        playlistDispatch
+                      )
+                      onClose()
+                    }}
+                  />
+                </label>
+              </div>
+            )
+          })}
+      </div>
+
+      <div className='create-playlist'>
+        <input
+          className='input-item'
+          type='text'
+          placeholder='Enter playlist name...'
+          onChange={e => setTitle(e.target.value)}
+        />
+        <button
+          disabled={title === ''}
+          className='btn btn-info'
+          onClick={() => {
+            addPlayist(title, token, playlistDispatch)
+            onClose()
+            setTitle('')
+          }}
+        >
+          Add
+        </button>
+      </div>
+    </main>
   )
 }
 

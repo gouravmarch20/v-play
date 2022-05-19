@@ -8,6 +8,9 @@
 }
 .btn-info {
   background-color: var(--color-info);
+  transition: all 0.7s;
+  color: white;
+  font-size: large;
 }
 .btn-danger {
   background-color: var(--color-danger);
@@ -17,13 +20,13 @@
 }
 .btn-success {
   background-color: #02b290;
-
   transition: all 0.7s;
+  color: white;
+  font-size: large;
 }
 .btn-space {
   background-color: var(--color-space);
 }
-/*  outline  btn */
 .btn-outline-success {
   font-weight: bold;
   color: var(--color-sucess);
@@ -33,6 +36,7 @@
   font-weight: bold;
   color: var(--color-danger);
   border: solid 2px var(--color-danger);
+  transition: all 0.7s;
 }
 .btn-outline-wait {
   font-weight: bold;
