@@ -16,6 +16,8 @@
   --color-text-green: #02b290;
   --color-text-blue-heading: #3944f7;
   --color-text-blue-subheading: #12b0e8;
+
+  --color-grey-400: 808080;
 }
 
 /* grey shades  */
@@ -88,6 +90,9 @@
   /* background-color: #E07C24; */
 }
 
-.text-color-teal{
+.text-color-teal {
   color: #02b290;
+}
+.bg-grey-400 {
+  background: var(--color-grey-400);
 }

@@ -1,6 +1,7 @@
 .btn {
   padding: 0.5rem;
   border: none;
+  border-radius: 0.3rem;
   margin: 0.3rem;
 }
 .btn-lg {
@@ -17,6 +18,15 @@
   transition: all 0.7s;
   color: white;
   font-size: large;
+}
+.btn-danger-light {
+  background-color: #e6425e;
+  transition: all 0.7s;
+  color: white;
+  font-size: large;
+}
+.btn-danger-light:hover {
+  background-color: #b9345a;
 }
 .btn-success {
   background-color: #02b290;

@@ -20,3 +20,18 @@
 .playsist-video-info-align-center {
   background-color: red;
 }
+.modal-title {
+  font-size: 2rem;
+  color: #03203c;
+  font-weight: 600;
+}
+.modal-close-icon {
+  font-size: 2rem;
+}
+.save-title {
+  color: blueviolet;
+  line-height: 1em;
+  font-weight: 900;
+  font-size: 2rem;
+  margin: 0rem auto;
+}

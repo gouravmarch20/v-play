@@ -23,9 +23,11 @@ const PlaylistModal = ({ videoId, onClose, onPlaylistCheck, videoDetail }) => {
     // <div >
     <main className='modal-container'>
       <div className='modal-main mb-10'>
-        <p className='content bold-900 text-md  '>Save to </p>
-        <button className='btn btn-danger' onClick={onClose}>
-          <RiCloseCircleFill />
+        <p className='save-title '>Save to </p>
+        <button className='btn btn-danger p-10' onClick={onClose}>
+          <i className='modal-close-icon'>
+            <RiCloseCircleFill />
+          </i>
         </button>
       </div>
 
@@ -39,7 +41,7 @@ const PlaylistModal = ({ videoId, onClose, onPlaylistCheck, videoDetail }) => {
             return (
               <div key={playlistId}>
                 <label className='modal-item '>
-                  <p className='text-lg  '> {title}</p>
+                  <p className='modal-title'> {title}</p>
                   <input
                     type='checkbox'
                     className='checkbox-item '

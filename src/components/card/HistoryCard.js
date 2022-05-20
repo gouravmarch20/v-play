@@ -31,7 +31,7 @@ const HistoryCard = () => {
           ) : (
             <>
               <div className='history-header'>
-                <h2 className='subheading ml-10h'>Your watched history</h2>
+                <h2 className='history-header-h2'>Your watched history</h2>
                 <button
                   className=' btn btn-info btn-align-end'
                   onClick={() => {
@@ -51,14 +51,14 @@ const HistoryCard = () => {
                       <img
                         src={generateThumbnail(_id)}
                         alt='the video deleted form youtube server'
-                        className='thumbnail-responsive'
+                        className='thumbnail-responsive pointer-none'
                       />
 
                       <div className='info'>
                         <div className='info-left'>
                           <p className='content '>
-                            {title.substring(0, 50)}
-                            <span>{title.length >= 50 ? '...' : ''}</span>
+                            {title.substring(0, 38)}
+                            <span>{title.length >= 38 ? '...' : ''}</span>
                           </p>
                         </div>
                         <div className='info-right'>

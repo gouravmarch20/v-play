@@ -1,11 +1,7 @@
 .navbarLeft-container-wrapper {
   display: flex;
 }
-.nav-left {
-  min-width: 20vw;
-  min-height: 87vh;
-  background-color: #cad5e2;
-}
+
 .container-wrapper {
   background-color: #ffffff;
   width: 80vw;

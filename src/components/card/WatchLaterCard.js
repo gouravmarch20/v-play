@@ -2,7 +2,7 @@ import React from 'react'
 import { generateThumbnail } from '../../utils/homeUtils'
 import { removeFromWatchLater } from '../../actions/watchLaterAction'
 import { useAuth } from '../../context/AuthContext'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { useVideo } from '../../context/VideoContext'
 import { MdDeleteForever } from 'react-icons/md'
@@ -14,6 +14,8 @@ const WatchLaterCard = () => {
   const {
     authState: { token, isLoggedIn }
   } = useAuth()
+  let navigate = useNavigate()
+
   return (
     <>
       {token && isLoggedIn ? (
@@ -25,40 +27,58 @@ const WatchLaterCard = () => {
               </div>
             </>
           ) : (
-            <div className='history-card-warper'>
-              {watchLater.map(d => {
-                const { _id, avatar, categoryName, title, description } = d
+            <>
+              <div className='history-header'>
+                <h2 className='history-header-h2'>
+                  {' '}
+                  You add
+                  <span className='span-header'> {watchLater.length}</span>
+                  video .
+                </h2>
+                <button
+                  className=' btn btn-info btn-align-end'
+                  onClick={() => {
+                    navigate('/')
+                  }}
+                >
+                  Watch more
+                </button>
+              </div>
+              <div className='history-card-warper '>
+                {watchLater.map(d => {
+                  const { _id, title } = d
 
-                return (
-                  <div key={_id} className='history-card'>
-                    <img
-                      src={generateThumbnail(_id)}
-                      alt='the video deleted form youtube server'
-                      className='thumbnail-responsive'
-                    />
+                  return (
+                    <div key={_id} className='history-card'>
+                      <img
+                        src={generateThumbnail(_id)}
+                        alt='the video deleted form youtube server'
+                        className='thumbnail-responsive pointer-none'
+                      />
 
-                    <div className='info'>
-                      <div className='info-left'>
-                        <p className='content'>
-                          {title.substring(0, 40)}{' '}
-                          <span>{title.length >= 50 ? '...' : ''}</span>
-                        </p>
-                      </div>
-                      <div className='info-right'>
-                        <button
-                          className='btn btn-danger'
-                          onClick={() => {
-                            removeFromWatchLater(_id, token, videoDispatch)
-                          }}
-                        >
-                          <MdDeleteForever />
-                        </button>
+                      <div className='info'>
+                        <div className='info-left'>
+                          <p className='content'>
+                            {title.substring(0, 40)}{' '}
+                            <span>{title.length >= 50 ? '...' : ''}</span>
+                          </p>
+                        </div>
+                        <div className='info-right'>
+                          <button
+                            className='btn btn-danger'
+                            onClick={() => {
+                              removeFromWatchLater(_id, token, videoDispatch)
+                            }}
+                          >
+                            <MdDeleteForever />
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )
-              })}
-            </div>
+                  )
+                })}
+              </div>
+            </>
           )}
         </div>
       ) : (

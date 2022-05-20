@@ -4,17 +4,15 @@
 .videoDetail-short {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 2rem;
   padding: 1rem;
 }
-.videoDetail-long {
-  background-color: green;
-}
+
 .videoDetail-action-btn {
-  margin-left: auto;
+  /* margin-left: auto; */
 }
 .views {
-  margin: 0 1rem;
   color: orange;
   font-size: 1.8rem;
 }
@@ -26,19 +24,25 @@
 /*  */
 .channel-info {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-left: 2rem;
 }
 .channel-name {
+  margin-top: 1rem;
   margin-left: 2rem;
-  font-size: 700;
+  font-size: 800;
   font-size: 2rem;
+  color: orangered;
+  text-transform: uppercase;
 }
 /*  */
 .video-description {
-  margin-top: 1rem;
-  margin-left: 1rem;
+  margin: 2rem;
+  margin-left: 4rem;
+  align-items: center;
   font-size: 1.6rem;
+  color: #242b2e;
+  /* background-color: red; */
 }
 .icon {
   font-size: 2.4rem;

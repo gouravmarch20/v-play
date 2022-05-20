@@ -1,14 +1,15 @@
 .home-chip-wrapper {
   min-height: 8vh;
-  background-color: #207398;
+  /* background-color: #e03b8b; */
+  background-color: #11144a;
   display: flex;
   align-items: center;
 
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 .home-chip {
-  background-color: #50dbb4;
-  color: #03203c;
+  background-color: #4d57f8;
+  color: white;
   font-weight: 600;
   font-size: 1.9rem;
   margin: 0rem 1rem;
@@ -19,8 +20,7 @@
 }
 .home-chip-selected,
 .home-chip:hover {
-  background-color: #4dd637;
-  color: white;
+  background-color: #e07c24;
 }
 .home-chip-selected {
   background-color: #e07c24 !important;

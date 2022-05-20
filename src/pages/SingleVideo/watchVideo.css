@@ -3,7 +3,7 @@
 }
 .watchVideo {
   display: flex;
-  max-width: 100vw ;
+  max-width: 100vw;
 }
 .video-detail {
   max-width: 70vw;
@@ -13,4 +13,11 @@
 .similar-video {
   max-width: 30vw;
   /* min-width: 30vw; */
+}
+.align-auth-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
 }

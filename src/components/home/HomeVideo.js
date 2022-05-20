@@ -3,7 +3,6 @@ import { useHome } from '../../context/HomeContext'
 import { useVideo } from '../../context/VideoContext'
 import { getFilteredVideo, generateThumbnail } from '../../utils/homeUtils'
 import { getVideoDetails } from '../../utils/videoUtils'
-import { SiCoronarenderer } from 'react-icons/si'
 import './homeVideo.css'
 import { Link } from 'react-router-dom'
 import { addToHistory } from '../../actions/historyAction'
@@ -13,7 +12,7 @@ const HomeVideo = () => {
   const {
     authState: { token }
   } = useAuth()
-  const { homeState, homeDispatch } = useHome()
+  const { homeState } = useHome()
   const { videoDispatch } = useVideo()
 
   const allVideo = homeState?.homeVideo
@@ -29,8 +28,7 @@ const HomeVideo = () => {
           {filteredVideos?.map((video, index) => {
             const {
               avatar,
-              categoryName,
-              description,
+          
               uploadedOn,
               views,
               channelName,
@@ -55,18 +53,18 @@ const HomeVideo = () => {
                 </Link>
 
                 <div className='home-video-info'>
-                  <img className='avatar-round' src={avatar} alt='no' />
+                  <img className='home-avatar-round' src={avatar} alt='no' />
                   <div className='home-video-miniDescription'>
-                    <p className=''>
+                    <p className='text-grey-700 text-xsm'>
                       {title.substring(0, 40)}{' '}
                       <span>{title.length >= 50 ? '...' : ''}</span>
                     </p>{' '}
-                    <p>{channelName}</p>
+                    <p className='text-grey-600'>{channelName}</p>
                     <div>
-                      <p>
+                      <p className='text-grey-500'>
                         {views} <span>views</span>
                       </p>
-                      <p>{uploadedOn}</p>
+                      <p className='text-grey-400'>{uploadedOn}</p>
                     </div>
                   </div>
                 </div>

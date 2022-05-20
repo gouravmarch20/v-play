@@ -51,9 +51,9 @@ const Playlist = () => {
                         </p>
                       </div>
                     </section>
-                    <div className='bg-danger-light flex-center-single-item'>
+                    <div className='bg-danger-light flex-center-single-item '>
                       <button
-                        className='btn btn-danger p-1'
+                        className='btn btn-danger p-1 cursor-pointer'
                         onClick={() => {
                           removePlaylist(_id, token, playlistDispatch)
                         }}

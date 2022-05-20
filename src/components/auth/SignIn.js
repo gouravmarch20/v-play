@@ -56,9 +56,9 @@ const SignIn = () => {
         </div>
 
         <div className=''>
-          <button className='signup-btn' onClick={submitLoginData}>
+          {/* <button className='signup-btn' onClick={submitLoginData}>
             Login Now
-          </button>
+          </button> */}
         </div>
         <div className=''>
           <button

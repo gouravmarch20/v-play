@@ -16,7 +16,6 @@ import {
   MdThumbUp,
   MdOutlineThumbUpAlt,
   MdPlaylistAdd,
-  MdPlaylistAddCheck,
   MdOutlineWatchLater,
   MdWatchLater
 } from 'react-icons/md'
@@ -24,8 +23,8 @@ import {
 const VidoeDetail = ({ videoId }) => {
   const [modal, setModal] = useState(false)
   const {
-    playlistDispatch,
-    playlistState: { playlists }
+    playlistDispatch
+    // playlistState: { playlists }
   } = usePlaylist()
   const {
     homeState: { homeVideo }
@@ -48,13 +47,13 @@ const VidoeDetail = ({ videoId }) => {
 
   return (
     <div className='videoDetail'>
-      <div className='videoDetail-short'>
-        <p className='title'>{title}</p>
+      <div className='videoDetail-short '>
+        <p className='content text-md'>{title}</p>
         <p className='videoDetail-action-btn'>
           <span className='views'>Views - {views}</span>
-          <span className='upload-date'>{uploadedOn}</span>
+          <div className='upload-date mt-10'>{uploadedOn}</div>
         </p>
-
+        {console.log(isLoggedIn)}
         <>
           {isVideoAddToWatchLater ? (
             <i
@@ -117,14 +116,11 @@ const VidoeDetail = ({ videoId }) => {
         </>
       </div>
 
-      <div className='videoDetail-s'>
-        <div className='channel-info'>
-          <img className='img-round' src={avatar} alt='' />
-          <p className='channel-name'>{channelName}</p>
-        </div>
-        <div>
-          <p className='video-description'>{description}</p>
-        </div>
+      <div className='channel-info'>
+        <img className='img-round' src={avatar} alt='' />
+        <p className='channel-name'>{channelName}</p>
+
+        <p className='video-description'>{description}</p>
       </div>
     </div>
   )

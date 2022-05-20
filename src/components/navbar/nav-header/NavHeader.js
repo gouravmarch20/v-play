@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './NavHeader.css'
-import { NavLink, Link, useNavigate } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { useAuth } from '../../../context/AuthContext'
 import { MdDarkMode, MdOutlineFlashlightOn } from 'react-icons/md'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
@@ -29,75 +29,28 @@ const NavHeader = () => {
     >
       <nav className='navbar-warpper'>
         <div className='navbar-left'>
-          <NavLink
-            to='/'
-            className='navbar-link'
-
-            // className={({ isActive }) =>
-            //   isActive ? 'navbar-link-active' : 'navbar-link'
-            // }
-          >
+          <NavLink to='/' className='navbar-link'>
             V-player
           </NavLink>
         </div>
 
         <div className='navbar-center'>
           <input className='navbar-search' type='search' name='' id='' />
-          <button className='navbar-search-btn'>search</button>
+          <button className='btn btn-info'>search</button>
         </div>
         <div className='navbar-right'>
-          {/* TODO: THEME TOGGLER */}
-          {/* <div>
-            {themeState.themeMode == 'light' ? (
-              <div
-                className='nav-theme-link'
-                onClick={() =>
-                  themeDispatch({
-                    type: 'LIGHT_MODE',
-                    payload: 'dark'
-                  })
-                }
-              >
-                <MdDarkMode />
-              </div>
-            ) : (
-              <div
-                className='nav-theme-link'
-                onClick={() =>
-                  themeDispatch({
-                    type: 'LIGHT_MODE',
-                    payload: 'light'
-                  })
-                }
-              >
-                <MdOutlineFlashlightOn />
-              </div>
-            )}
-          </div> */}
-
           {!isLoggedIn && (
-            <NavLink
-              to='/signup'
-              className='navbar-link'
-              // className={({ isActive }) =>
-              //   isActive ? 'navbar-link-active' : 'navbar-link'
-              // }
-            >
-              <button className='btn-auth'>Signup</button>
+            <NavLink to='/signin' className='navbar-link'>
+              <button className='btn btn-danger p-10'>SignIn</button>
             </NavLink>
           )}
-          {!isLoggedIn && (
-            <NavLink
-              to='/signin'
-              className='navbar-link'
 
-              // className={({ isActive }) =>
-              //   isActive ? 'navbar-link-active' : 'navbar-link'
-              // }
-            >
-              <button className='btn-auth'>SignIn</button>
+          {!isLoggedIn && (
+            <NavLink to='/signup' className='navbar-link'>
+              <button className='btn btn-danger-light'>Signup</button>
             </NavLink>
           )}
+
           {isLoggedIn && (
             <div
               className='userinfo-signout-toggle'
@@ -118,7 +71,7 @@ const NavHeader = () => {
                 <div className='dropdown-box-container'>
                   <div className='dropdown-box-flex'>
                     <p className='text-sm bold-700 text-center text-black mt-10 mb-10'>
-                      Welcome to v - player ❤️
+                      Welcome to v - player
                     </p>
                     <button
                       className='btn-danger btn-signout'
