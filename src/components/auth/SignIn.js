@@ -12,12 +12,14 @@ const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const submitLoginData = () => {
-    loginHandler(email, password)
+    if (email && password) {
+      loginHandler(email, password)
+    }
   }
   const submitLoginWithCredentials = () => {
-    setEmail('adarshbalika@gmail.com')
-    setPassword('adarshBalika123')
-    loginHandler('adarshbalika@gmail.com', 'adarshBalika123')
+    setEmail('gourav@gmail.com')
+    setPassword('gourav123')
+    loginHandler('gourav@gmail.com', 'gourav123')
   }
   return (
     <div className='signin'>
@@ -56,9 +58,9 @@ const SignIn = () => {
         </div>
 
         <div className=''>
-          {/* <button className='signup-btn' onClick={submitLoginData}>
+          <button className='signup-btn' onClick={submitLoginData}>
             Login Now
-          </button> */}
+          </button>
         </div>
         <div className=''>
           <button

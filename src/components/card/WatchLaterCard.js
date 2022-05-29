@@ -51,6 +51,9 @@ const WatchLaterCard = () => {
                   return (
                     <div key={_id} className='history-card'>
                       <img
+                        onClick={() => {
+                          navigate(`/watch/${_id}`)
+                        }}
                         src={generateThumbnail(_id)}
                         alt='the video deleted form youtube server'
                         className='thumbnail-responsive pointer-none'

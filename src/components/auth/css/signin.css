@@ -3,12 +3,14 @@
   font-weight: 500;
   font-size: 1.5rem;
 }
+
 .signin {
   margin: 10vh auto;
   max-width: 430px;
   width: 100%;
   padding: 34px;
   border-radius: 1rem;
+  background-color: aliceblue;
   box-shadow: 0 5px 10px rgba(0, 4, 0, 0.6);
   font-family: "Poppins", sans-serif;
 }
@@ -64,10 +66,10 @@
   text-decoration: underline;
 }
 .sign-test {
-  background-color: teal !important;
+  background-color: #1C8D73 !important;
   font-weight: 500;
   color: white;
 }
 .sign-test:hover {
-  background-color: green !important;
+  background-color: #02B290 !important;
 }

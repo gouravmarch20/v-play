@@ -1,12 +1,11 @@
 import React from 'react'
 import { useVideo } from '../../context/VideoContext'
 import { generateThumbnail } from '../../utils/homeUtils'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { MdDeleteForever } from 'react-icons/md'
 import { removeFromHistory, clearAllHistory } from '../../actions/historyAction'
 import { useAuth } from '../../context/AuthContext'
-// TODO: CLEAR HISTORY ALL FEATURE
 
 import './css/historyCard.css'
 const HistoryCard = () => {
@@ -17,6 +16,7 @@ const HistoryCard = () => {
     videoState: { watchedHistory },
     videoDispatch
   } = useVideo()
+  let navigate = useNavigate()
 
   return (
     <>
@@ -45,15 +45,17 @@ const HistoryCard = () => {
               <div className='history-card-warper'>
                 {watchedHistory?.map(watchedVideo => {
                   const { _id, title } = watchedVideo
-
+                  console.log(title)
                   return (
                     <div key={_id} className='history-card'>
                       <img
                         src={generateThumbnail(_id)}
+                        onClick={() => {
+                          navigate(`/watch/${_id}`)
+                        }}
                         alt='the video deleted form youtube server'
-                        className='thumbnail-responsive pointer-none'
+                        className='thumbnail-responsive '
                       />
-
                       <div className='info'>
                         <div className='info-left'>
                           <p className='content '>
@@ -76,17 +78,6 @@ const HistoryCard = () => {
                   )
                 })}{' '}
               </div>
-
-              {/* <div className='home-video-miniDescription'>
-              <p>{title}</p>
-              <p>{channelName}</p>
-            </div>
-            <div>
-              <p>views : {views}</p>
-              <div className='home-video-quickAction'>
-                <SiCoronarenderer />
-              </div>
-            </div> */}
             </>
           )}
         </div>

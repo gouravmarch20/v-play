@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer, useEffect } from 'react'
 import { AuthReducer } from '../reducers'
 import { useNavigate } from 'react-router-dom'
-import { loginUser } from '../actions/authAction'
+import { signupUser, loginUser } from '../actions/authAction'
 import toast from 'react-hot-toast'
 
 const initialState = {
@@ -36,18 +36,13 @@ const AuthProvider = ({ children }) => {
   const signupHandler = async (firstName, lastName, email, password) => {
     const toastId = toast.loading('Creating your account')
     try {
-      // const { status } = await signupService(
-      //   firstName,
-      //   lastName,
-      //   email,
-      //   password
-      // )
-      // if (status === 200 || status === 201) {
-      //   toast.success('Account created successfully!', {
-      //     id: toastId
-      //   })
-      //   navigate('/login')
-      // }
+      const { status } = await signupUser(firstName, lastName, email, password)
+      if (status === 200 || status === 201) {
+        toast.success('Account created successfully!', {
+          id: toastId
+        })
+        navigate('/signin')
+      }
     } catch (error) {
       toast.error('Some error occured. Try Again.', {
         id: toastId
@@ -63,7 +58,7 @@ const AuthProvider = ({ children }) => {
         data: { encodedToken, foundUser },
         status
       } = await loginUser(email, password)
-      
+
       if (status === 200) {
         toast.success(`Welcome, ${foundUser.firstName}`, {
           id: toastId,

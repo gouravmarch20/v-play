@@ -15,28 +15,30 @@ const HomeChip = () => {
   return (
     <div>
       <div className='home-chip-wrapper'>
-        {categories.length === 0
-          ? console.warn('object')
-          : categories.map((category, index) => {
-              const { categoryName } = category
-              return (
-                <button
-                  className={`home-chip  ${
-                    selectedChip === index ? 'home-chip-selected' : ''
-                  }`}
-                  key={categoryName}
-                  onClick={() => {
-                    selectedChipHandler(index)
-                    homeDispatch({
-                      type: 'FILTER_BY_CATEGORY',
-                      payload: categoryName
-                    })
-                  }}
-                >
-                  {categoryName}
-                </button>
-              )
-            })}
+        {categories.length === 0 ? (
+          <h2 className='subheading'>No category available</h2>
+        ) : (
+          categories.map((category, index) => {
+            const { categoryName } = category
+            return (
+              <button
+                className={`home-chip  ${
+                  selectedChip === index ? 'home-chip-selected' : ''
+                }`}
+                key={categoryName}
+                onClick={() => {
+                  selectedChipHandler(index)
+                  homeDispatch({
+                    type: 'FILTER_BY_CATEGORY',
+                    payload: categoryName
+                  })
+                }}
+              >
+                {categoryName}
+              </button>
+            )
+          })
+        )}
       </div>
     </div>
   )

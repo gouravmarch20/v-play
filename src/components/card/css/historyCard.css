@@ -4,7 +4,7 @@
 }
 
 .history-header {
-  background-color: #03203C;
+  background-color: #03203c;
   min-width: 80vw;
   display: flex;
   align-items: center;
@@ -31,6 +31,12 @@
   height: 35vh;
   background: lightblue;
   margin: 1rem !important;
+}
+.history-card:hover {
+  transform: translateY(-0.5vmax);
+  box-shadow: 2px 4px 8px blueviolet;
+
+  transition: all 0.4s;
 }
 .history-header-h2 {
   color: white;

@@ -121,7 +121,6 @@ export const deleteVideoFromPlaylist = async (
         headers
       }
     )
-    console.log(data.playlist)
     if (status === 200) {
       toast.success('Video removed successfully.', {
         id: toastId
@@ -148,5 +147,5 @@ export const toggleCheckbox = (
   dispatch
 ) =>
   isVideoAlreadyInPlaylist
-    ? console.log('already added ')
+    ? ""
     : addVideoToPlaylist(playlistId, video, token, dispatch)

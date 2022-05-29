@@ -40,7 +40,6 @@ const HomeVideo = () => {
                 <Link
                   to={`watch/${_id}`}
                   onClick={() => {
-                    // TODO: IF ALREADY ADDED CASE --> STOP ADDING
                     const tempVideoToAdd = getVideoDetails(allVideo, _id)
                     addToHistory(tempVideoToAdd, token, videoDispatch)
                   }}

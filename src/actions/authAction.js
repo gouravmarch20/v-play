@@ -1,11 +1,13 @@
 import axios from 'axios'
-export const createUser = async userData => {
-  try {
-    const response = await axios.post('/api/auth/signup', userData)
-  } catch (error) {
-    console.warn(error)
-  }
+export const signupUser = (firstName, lastName, email, password) => {
+  return axios.post('/api/auth/signup', {
+    firstName,
+    lastName,
+    email,
+    password
+  })
 }
+
 export const loginUser = (email, password) => {
   return axios.post('/api/auth/login', { email, password })
 }

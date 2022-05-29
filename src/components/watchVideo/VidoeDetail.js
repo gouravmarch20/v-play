@@ -50,9 +50,9 @@ const VidoeDetail = ({ videoId }) => {
       <div className='videoDetail-short '>
         <p className='content text-md'>{title}</p>
         <p className='videoDetail-action-btn'>
-          <span className='views'>Views - {views}</span>
-          <div className='upload-date mt-10'>{uploadedOn}</div>
+          <span className='views'>Views  {views}</span>
         </p>
+        <p className='upload-date mt-10'>{uploadedOn}</p>
         <>
           {isVideoAddToWatchLater ? (
             <i

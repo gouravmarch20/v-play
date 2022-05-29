@@ -10,6 +10,13 @@
   margin: 1rem;
   height: 38vh;
   width: 25vw;
+  border: 1px solid blueviolet;
+}
+.playlist-card:hover {
+  transform: translateY(-.5vmax);
+  box-shadow: 2px 4px 8px blueviolet;
+
+  transition: all 0.4s;
 }
 .playlist-video-section {
   margin-top: 1rem;

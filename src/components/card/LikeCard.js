@@ -53,7 +53,10 @@ const LikeCard = () => {
                       <img
                         src={generateThumbnail(_id)}
                         alt='the video deleted form youtube server'
-                        className='thumbnail-responsive pointer-none'
+                        className='thumbnail-responsive '
+                        onClick={() => {
+                          navigate(`/watch/${_id}`)
+                        }}
                       />
 
                       <div className='info'>

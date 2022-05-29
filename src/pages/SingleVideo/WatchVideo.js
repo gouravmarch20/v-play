@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import PlayVideo from '../../components/watchVideo/PlayVideo'
 import TakeNote from '../../components/watchVideo/TakeNote'
@@ -13,13 +13,17 @@ export const WatchVideo = () => {
     authState: { token, isLoggedIn }
   } = useAuth()
   const { videoId } = useParams()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [videoId])
   return (
     <>
       {isLoggedIn ? (
         <>
           <div className='watchVideo'>
             <PlayVideo videoId={videoId} />
-            <TakeNote />
+            {/* <TakeNote /> */}
+            
           </div>
           <div className='watchVideo'>
             <section className='video-detail'>
