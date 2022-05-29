@@ -5,7 +5,6 @@ import { useAuth } from '../../context/AuthContext'
 
 const SignIn = () => {
   const {
-    authState: { error },
     loginHandler
   } = useAuth()
 

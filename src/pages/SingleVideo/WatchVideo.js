@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import PlayVideo from '../../components/watchVideo/PlayVideo'
-import TakeNote from '../../components/watchVideo/TakeNote'
+// import TakeNote from '../../components/watchVideo/TakeNote'
 import VidoeDetail from '../../components/watchVideo/VidoeDetail'
 import SimilarVideo from '../../components/watchVideo/SimilarVideo'
 import { useAuth } from '../../context/AuthContext'
@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 import './watchVideo.css'
 export const WatchVideo = () => {
   const {
-    authState: { token, isLoggedIn }
+    authState: {  isLoggedIn }
   } = useAuth()
   const { videoId } = useParams()
   useEffect(() => {

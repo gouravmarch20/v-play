@@ -2,7 +2,7 @@ import React from 'react'
 import Mockman from 'mockman-js'
 import NavHeader from './components/navbar/nav-header/NavHeader'
 import './Common.css'
-import { Route, Routes, Navigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import {
   WatchVideo,
   HistoryPage,
@@ -17,7 +17,6 @@ import {
   SignInPage,SearchResultPage
 } from './pages/index'
 import { ToasterWrapper } from './utils/ToasterUtils'
-import { useAuth } from './context/AuthContext'
 
 const Router = () => {
   return (

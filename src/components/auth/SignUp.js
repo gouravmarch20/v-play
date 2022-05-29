@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import './css/signup.css'
-import { createUser } from '../../actions/authAction'
 import { Link } from 'react-router-dom'
-import toast from 'react-hot-toast'
 import { useAuth } from '../../context/AuthContext'
 
 const SignUp = () => {

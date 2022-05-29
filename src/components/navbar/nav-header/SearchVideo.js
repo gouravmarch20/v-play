@@ -7,8 +7,7 @@ const Search = () => {
   const navigate = useNavigate()
 
   const {
-    homeState: { homeVideo },
-    homeDispatch
+    homeState: { homeVideo }
   } = useHome()
 
   const submitSearch = text => {
@@ -38,7 +37,6 @@ const Search = () => {
 
   return (
     <>
-
       <div className=''>
         <input
           className='search-field navbar-search'

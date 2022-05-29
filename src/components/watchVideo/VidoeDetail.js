@@ -31,7 +31,7 @@ const VidoeDetail = ({ videoId }) => {
   } = useHome()
 
   const {
-    authState: { token, isLoggedIn }
+    authState: { token }
   } = useAuth()
   const {
     videoDispatch,
