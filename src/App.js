@@ -14,7 +14,7 @@ import {
   NotFoundPage,
   HomePage,
   SignUpPage,
-  SignInPage
+  SignInPage,SearchResultPage
 } from './pages/index'
 import { ToasterWrapper } from './utils/ToasterUtils'
 import { useAuth } from './context/AuthContext'
@@ -32,8 +32,11 @@ const Router = () => {
       <Route path='/watch-later' element={<WatchLaterPage />} />
       <Route path='/signup' element={<SignUpPage />} />
       <Route path='/signin' element={<SignInPage />} />
+      <Route path='/results' element={<SearchResultPage />} />
+
       <Route path='*' element={<NotFoundPage />} />
       <Route path='/mockman' element={<Mockman />} />
+
     </Routes>
   )
 }

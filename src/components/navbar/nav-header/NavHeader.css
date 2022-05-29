@@ -16,9 +16,9 @@
 }
 .navbar-center {
   display: flex;
-  flex: 3;
+
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 .navbar-right {
   display: flex;
@@ -31,10 +31,9 @@
   display: flex;
   margin-left: 1rem;
   padding: 0.6rem;
+  justify-content: flex-end;
 }
-.navbar-search-btn {
-  padding: 0.4rem;
-}
+
 .navbar-link {
   margin-left: 0.8rem;
   font-weight: 700;

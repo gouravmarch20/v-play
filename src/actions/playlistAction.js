@@ -98,7 +98,6 @@ export const addVideoToPlaylist = async (
       toast.success('Video added to playlist', {
         id: toastId
       })
-      console.log(data)
       playlistDispatch({ type: ADD_VIDEO_TO_PLAYLIST, payload: data.playlist })
     }
   } catch (error) {

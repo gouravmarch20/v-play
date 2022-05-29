@@ -53,7 +53,6 @@ const VidoeDetail = ({ videoId }) => {
           <span className='views'>Views - {views}</span>
           <div className='upload-date mt-10'>{uploadedOn}</div>
         </p>
-        {console.log(isLoggedIn)}
         <>
           {isVideoAddToWatchLater ? (
             <i

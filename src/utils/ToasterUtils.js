@@ -15,7 +15,7 @@ export const ToasterWrapper = () => {
           fontSize: '1.4rem'
         },
         success: {
-          duration: 2500
+          duration: 1500
         }
       }}
     />

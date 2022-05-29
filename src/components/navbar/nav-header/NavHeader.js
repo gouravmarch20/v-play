@@ -3,6 +3,7 @@ import './NavHeader.css'
 import { NavLink, Link } from 'react-router-dom'
 import { useAuth } from '../../../context/AuthContext'
 import { MdDarkMode, MdOutlineFlashlightOn } from 'react-icons/md'
+import SearchVideo from './SearchVideo'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
 import { FaUserCircle } from 'react-icons/fa'
 
@@ -23,8 +24,6 @@ const NavHeader = () => {
         position: 'sticky',
         top: '0px',
         zIndex: 1
-        // backgroundColor: `${currectTheme.backgroundColor}`,
-        // color: `${currectTheme.textColor}`
       }}
     >
       <nav className='navbar-warpper'>
@@ -35,8 +34,7 @@ const NavHeader = () => {
         </div>
 
         <div className='navbar-center'>
-          <input className='navbar-search' type='search' name='' id='' />
-          <button className='btn btn-info'>search</button>
+          <SearchVideo />
         </div>
         <div className='navbar-right'>
           {!isLoggedIn && (
