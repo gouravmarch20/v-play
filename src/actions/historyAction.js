@@ -44,7 +44,6 @@ export const addToHistory = async (video, token, videoDispatch) => {
   }
 }
 export const removeFromHistory = async (videoId, token, videoDispatch) => {
-  console.log(videoId)
   const toastId = toast.loading('deleting video')
   try {
     const { data, status } = await axios.delete(
@@ -54,7 +53,6 @@ export const removeFromHistory = async (videoId, token, videoDispatch) => {
       }
     )
     if (status === 200) {
-      console.log(data)
       toast.success('Video deleted from history.', {
         id: toastId
       })

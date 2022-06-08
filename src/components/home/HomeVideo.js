@@ -23,7 +23,7 @@ const HomeVideo = () => {
   return (
     <div>
       {filteredVideos?.length === 0 ? (
-        <h2>no vi found</h2>
+        <h2 className='heading mt-10'>no video found</h2>
       ) : (
         <div className='home-video-flex'>
           {filteredVideos?.map((video, index) => {

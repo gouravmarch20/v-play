@@ -50,7 +50,7 @@ const VidoeDetail = ({ videoId }) => {
       <div className='videoDetail-short '>
         <p className='content text-md'>{title}</p>
         <p className='videoDetail-action-btn'>
-          <span className='views'>Views  {views}</span>
+          <span className='views'>Views {views}</span>
         </p>
         <p className='upload-date mt-10'>{uploadedOn}</p>
         <>
@@ -96,6 +96,12 @@ const VidoeDetail = ({ videoId }) => {
             </i>
           )}
         </>
+
+        <>
+          <i className='icon' onClick={() => setModal(true)}>
+            <MdPlaylistAdd />
+          </i>
+        </>
         {modal && (
           <PlaylistModal
             videoDetail={videoDetail}
@@ -108,11 +114,6 @@ const VidoeDetail = ({ videoId }) => {
             }
           ></PlaylistModal>
         )}
-        <>
-          <i className='icon' onClick={() => setModal(true)}>
-            <MdPlaylistAdd />
-          </i>
-        </>
       </div>
 
       <div className='channel-info'>

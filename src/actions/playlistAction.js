@@ -94,7 +94,6 @@ export const addVideoToPlaylist = async (
       }
     )
     const { data, status } = response
-    console.log(data)
     if (status === 200 || status === 201) {
       toast.success('Video added to playlist', {
         id: toastId

@@ -25,7 +25,7 @@ const HistoryCard = () => {
           {watchedHistory.length === 0 ? (
             <>
               <div className='flex-align-center'>
-                <h1 className='heading '> not watched any video</h1>
+              <h1 className='heading '> not watched any video</h1>
               </div>
             </>
           ) : (

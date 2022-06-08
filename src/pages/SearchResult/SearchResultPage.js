@@ -38,56 +38,66 @@ export const SearchResultPage = () => {
       <div className='container-wrapper'>
         <div>
           {searchResult?.length === 0 ? (
-            <h2>no vi found</h2>
+            <h2 className='heading mt-10'>no video found seach again </h2>
           ) : (
-            <div className='home-video-flex'>
-              {searchResult?.map((video, index) => {
-                const {
-                  avatar,
-                  uploadedOn,
-                  views,
-                  channelName,
-                  _id,
-                  title
-                } = video
-                return (
-                  <div key={index} className='home-video-card'>
-                    <img
-                      onClick={() => {
-                        const tempVideoToAdd = getVideoDetails(allVideo, _id)
-                        addToHistory(tempVideoToAdd, token, videoDispatch)
+            <>
+              <div className='history-header'>
+                <h2 className='history-header-h2 '>Search Results</h2>
+              </div>
+              <div className='home-video-flex'>
+                {searchResult?.map((video, index) => {
+                  const {
+                    avatar,
+                    uploadedOn,
+                    views,
+                    channelName,
+                    _id,
+                    title
+                  } = video
+                  return (
+                    <>
+                      <div key={index} className='home-video-card'>
+                        <img
+                          onClick={() => {
+                            const tempVideoToAdd = getVideoDetails(
+                              allVideo,
+                              _id
+                            )
+                            addToHistory(tempVideoToAdd, token, videoDispatch)
 
-                        navigate(`/watch/${_id}`)
-                      }}
-                      src={generateThumbnail(_id)}
-                      alt='the video deleted form youtube server'
-                      className='thumbnail-responsive'
-                    />
+                            navigate(`/watch/${_id}`)
+                          }}
+                          src={generateThumbnail(_id)}
+                          alt='the video deleted form youtube server'
+                          className='thumbnail-responsive'
+                        />
 
-                    <div className='home-video-info'>
-                      <img
-                        className='home-avatar-round'
-                        src={avatar}
-                        alt='no'
-                      />
-                      <div className='home-video-miniDescription'>
-                        <p className='text-grey-700 text-xsm'>
-                          {title.substring(0, 40)}{' '}
-                          <span>{title.length >= 50 ? '...' : ''}</span>
-                        </p>{' '}
-                        <p className='text-grey-600'>{channelName}</p>
-                        <div>
-                          <p className='text-grey-500'>
-                            {views} <span>views</span>
-                          </p>
-                          <p className='text-grey-400'>{uploadedOn}</p>
+                        <div className='home-video-info'>
+                          <img
+                            className='home-avatar-round'
+                            src={avatar}
+                            alt='no'
+                          />
+                          <div className='home-video-miniDescription'>
+                            <p className='text-grey-700 text-xsm'>
+                              {title.substring(0, 40)}{' '}
+                              <span>{title.length >= 50 ? '...' : ''}</span>
+                            </p>{' '}
+                            <p className='text-grey-600'>{channelName}</p>
+                            <div>
+                              <p className='text-grey-500'>
+                                {views} <span>views</span>
+                              </p>
+                              <p className='text-grey-400'>{uploadedOn}</p>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
+                      </div>{' '}
+                    </>
+                  )
+                })}
+              </div>
+            </>
           )}
         </div>
       </div>
