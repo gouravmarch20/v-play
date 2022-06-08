@@ -17,8 +17,8 @@ const SignIn = () => {
   }
   const submitLoginWithCredentials = () => {
     setEmail('gourav@gmail.com')
-    setPassword('gourav123')
-    loginHandler('gourav@gmail.com', 'gourav123')
+    setPassword('gouravalph@123A')
+    loginHandler('gourav@gmail.com', 'gouravalph@123A')
   }
   return (
     <div className='signin'>

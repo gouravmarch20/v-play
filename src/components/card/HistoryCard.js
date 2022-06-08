@@ -45,7 +45,6 @@ const HistoryCard = () => {
               <div className='history-card-warper'>
                 {watchedHistory?.map(watchedVideo => {
                   const { _id, title } = watchedVideo
-                  console.log(title)
                   return (
                     <div key={_id} className='history-card'>
                       <img

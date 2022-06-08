@@ -12,10 +12,10 @@ import {
   ERROR
 } from '../types'
 
-const headers = {
-  authorization:
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI4MTAyMWNjNC00YjFkLTQyOGItYjJmMC0wNjhkYTQ4YTk4MzQiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ.45ynQ6aZhoM1zsNwIKCYR_IATaszKn0ssvnPPQkKL8E'
-}
+// const headers = {
+//   authorization:
+//     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI4MTAyMWNjNC00YjFkLTQyOGItYjJmMC0wNjhkYTQ4YTk4MzQiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ.45ynQ6aZhoM1zsNwIKCYR_IATaszKn0ssvnPPQkKL8E'
+// }
 
 export const getPlaylists = async (token, playlistDispatch) => {
   playlistDispatch({ type: LOADING })
@@ -40,7 +40,7 @@ export const addPlayist = async (title, token, dispatch) => {
         playlist: { title: title }
       },
       {
-        headers
+        headers: { authorization: token }
       }
     )
     if (status === 200 || status === 201) {
@@ -62,7 +62,7 @@ export const removePlaylist = async (playlistId, token, playlistDispatch) => {
     const { data, status } = await axios.delete(
       `api/user/playlists/${playlistId}`,
       {
-        headers
+        headers: { authorization: token }
       }
     )
     if (status === 200) {
@@ -94,6 +94,7 @@ export const addVideoToPlaylist = async (
       }
     )
     const { data, status } = response
+    console.log(data)
     if (status === 200 || status === 201) {
       toast.success('Video added to playlist', {
         id: toastId
@@ -118,7 +119,7 @@ export const deleteVideoFromPlaylist = async (
     const { data, status } = await axios.delete(
       `/api/user/playlists/${playlistId}/${videoId}`,
       {
-        headers
+        headers: { authorization: token }
       }
     )
     if (status === 200) {
@@ -147,5 +148,5 @@ export const toggleCheckbox = (
   dispatch
 ) =>
   isVideoAlreadyInPlaylist
-    ? ""
+    ? deleteVideoFromPlaylist(playlistId, videoId, token, dispatch)
     : addVideoToPlaylist(playlistId, video, token, dispatch)
