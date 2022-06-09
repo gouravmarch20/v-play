@@ -24,8 +24,13 @@ const HistoryCard = () => {
         <div className=' '>
           {watchedHistory.length === 0 ? (
             <>
-              <div className='flex-align-center'>
-              <h1 className='heading '> not watched any video</h1>
+              <div className='flex-align-column-center'>
+                <h1 className='heading '> not watched any video</h1>
+                <div className='login-cta'>
+                  <Link to='/'>
+                    <button className='ctn-btn'>Watch Video</button>
+                  </Link>
+                </div>
               </div>
             </>
           ) : (
@@ -33,7 +38,7 @@ const HistoryCard = () => {
               <div className='history-header'>
                 <h2 className='history-header-h2'>Your watched history</h2>
                 <button
-                  className=' btn btn-info btn-align-end'
+                  className=' btn btn-info btn-align-end '
                   onClick={() => {
                     clearAllHistory(token, videoDispatch)
                   }}

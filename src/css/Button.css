@@ -107,25 +107,26 @@
   border-radius: 4px;
   border: 0;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.9rem;
   font-weight: bold;
   line-height: 24px;
+  margin-top: 1rem;
 
-  padding: 1rem 1.2rem;
+  padding: 1.2rem 1.4rem;
 
   transition: all 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .ctn-btn-pay {
-  margin: 1rem;
-  background-color: #02b290;
+  background-color: #202eee;
   border-radius: 4px;
   border: 0;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.9rem;
   font-weight: bold;
   line-height: 24px;
+  margin-top: 1rem;
 
-  padding: 1rem 1.2rem;
+  padding: 1.2rem 1.4rem;
 
   transition: all 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
 }

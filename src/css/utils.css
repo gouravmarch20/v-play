@@ -18,6 +18,14 @@
   text-align: center;
   font-family: monospace;
 }
+.subheading-green {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0.5rem;
+  color: #02b290;
+  font-family: cursive;
+  text-transform: capitalize;
+}
 .content {
   width: 80%;
   margin: 1rem auto;

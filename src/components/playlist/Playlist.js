@@ -23,8 +23,13 @@ const Playlist = () => {
         <div>
           {playlists.length === 0 ? (
             <>
-              <div className='flex-align-center'>
+              <div className='flex-align-column-center'>
                 <h1 className='heading '> empty playist</h1>
+                <div className='login-cta'>
+                  <Link to='/'>
+                    <button className='ctn-btn'>Watch Video </button>
+                  </Link>
+                </div>
               </div>
             </>
           ) : (
