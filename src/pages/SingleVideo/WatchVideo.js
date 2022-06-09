@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 import './watchVideo.css'
 export const WatchVideo = () => {
   const {
-    authState: {  isLoggedIn }
+    authState: { isLoggedIn }
   } = useAuth()
   const { videoId } = useParams()
   useEffect(() => {
@@ -23,7 +23,6 @@ export const WatchVideo = () => {
           <div className='watchVideo'>
             <PlayVideo videoId={videoId} />
             {/* <TakeNote /> */}
-            
           </div>
           <div className='watchVideo'>
             <section className='video-detail'>

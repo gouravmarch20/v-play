@@ -1,5 +1,4 @@
 import { createContext, useContext, useReducer, useEffect } from 'react'
-import axios from 'axios'
 import { useAuth } from '../context/AuthContext'
 
 import { getHistory } from '../actions/historyAction'

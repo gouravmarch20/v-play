@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useHome } from '../../context/HomeContext'
 import { useVideo } from '../../context/VideoContext'
+import { useAuth } from '../../context/AuthContext'
 import { getFilteredVideo, generateThumbnail } from '../../utils/homeUtils'
 import { getVideoDetails } from '../../utils/videoUtils'
-import './homeVideo.css'
-import { Link } from 'react-router-dom'
 import { addToHistory } from '../../actions/historyAction'
-import { useAuth } from '../../context/AuthContext'
+
+import './homeVideo.css'
 
 const HomeVideo = () => {
   const {
@@ -22,13 +23,13 @@ const HomeVideo = () => {
   return (
     <div>
       {filteredVideos?.length === 0 ? (
-        <h2>no vi found</h2>
+        <h2 className='heading mt-10'>no video found</h2>
       ) : (
         <div className='home-video-flex'>
           {filteredVideos?.map((video, index) => {
             const {
               avatar,
-          
+
               uploadedOn,
               views,
               channelName,

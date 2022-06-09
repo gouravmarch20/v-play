@@ -8,20 +8,21 @@
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 .home-chip {
-  background-color: #4d57f8;
+  background-color: #5b65f1;
   color: white;
-  font-weight: 600;
-  font-size: 1.9rem;
-  margin: 0rem 1rem;
-  padding: 1rem 0.6rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 1rem 1rem;
+  padding: 0.9rem 0.6rem;
   cursor: pointer;
   border-radius: 1.6rem;
   border: none;
 }
 .home-chip-selected,
 .home-chip:hover {
-  background-color: #e07c24;
+  background-color: #E03B8B;
 }
 .home-chip-selected {
-  background-color: #e07c24 !important;
+  background-color: #E03B8B !important;
+  font-weight: 500;
 }

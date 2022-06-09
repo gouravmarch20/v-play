@@ -1,5 +1,4 @@
 import React from 'react'
-import Mockman from 'mockman-js'
 import NavHeader from './components/navbar/nav-header/NavHeader'
 import './Common.css'
 import { Route, Routes } from 'react-router-dom'
@@ -9,7 +8,7 @@ import {
   LikedPage,
   PlaylistPage,
   PlaylistVideoPage,
-  TrendingPage,
+  // TrendingPage,
   WatchLaterPage,
   NotFoundPage,
   HomePage,
@@ -25,7 +24,7 @@ const Router = () => {
       <Route path='/watch/:videoId' element={<WatchVideo />} />
       <Route path='/history' element={<HistoryPage />} />
       <Route path='/liked' element={<LikedPage />} />
-      <Route path='/trending' element={<TrendingPage />} />
+      {/* <Route path='/trending' element={<TrendingPage />} /> */}
       <Route path='/playlist' element={<PlaylistPage />} />
       <Route path='/playlists/:playlistId' element={<PlaylistVideoPage />} />
       <Route path='/watch-later' element={<WatchLaterPage />} />
@@ -34,7 +33,6 @@ const Router = () => {
       <Route path='/results' element={<SearchResultPage />} />
 
       <Route path='*' element={<NotFoundPage />} />
-      <Route path='/mockman' element={<Mockman />} />
 
     </Routes>
   )

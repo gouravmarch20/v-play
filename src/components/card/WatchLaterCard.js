@@ -22,8 +22,13 @@ const WatchLaterCard = () => {
         <div>
           {watchLater.length === 0 ? (
             <>
-              <div className='flex-align-center'>
+              <div className='flex-align-column-center'>
                 <h1 className='heading '> not add any video</h1>
+                <div className='login-cta'>
+                  <Link to='/'>
+                    <button className='ctn-btn'>Watch Video</button>
+                  </Link>
+                </div>
               </div>
             </>
           ) : (

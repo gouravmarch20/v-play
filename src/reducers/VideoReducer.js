@@ -25,6 +25,7 @@ export const VideoReducer = (state, { type, payload }) => {
     case LOAD_HISTORY:
       return { ...state, loading: false, watchedHistory: payload }
     case ADD_TO_WATCH_HISTORY: {
+   
       return { ...state, watchedHistory: payload }
     }
     case REMOVE_WATCH_HISTORY:

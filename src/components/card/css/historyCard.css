@@ -19,6 +19,14 @@
   align-items: center;
   justify-content: center;
 }
+.flex-align-column-center{
+  flex-direction: column;
+  display: flex;
+  height: 60vh;
+  width: 80vw;
+  align-items: center;
+  justify-content: center;
+}
 
 .btn-align-end {
   margin-left: auto;

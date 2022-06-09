@@ -34,7 +34,6 @@ const Search = () => {
     })
     return suggestions
   }
-
   return (
     <>
       <div className=''>
@@ -53,7 +52,7 @@ const Search = () => {
             {searchSuggestions().length > 0 ? (
               searchSuggestions()
             ) : (
-              <li className='suggestion-item'>{`No Search results for: ${searchTerm}`}</li>
+              <li className='suggestion-item bold-600'>{`No Search results for: ${searchTerm}`}</li>
             )}
           </ul>
         )}

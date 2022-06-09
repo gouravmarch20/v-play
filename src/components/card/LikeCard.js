@@ -23,8 +23,15 @@ const LikeCard = () => {
         <div>
           {likes.length === 0 ? (
             <>
-              <div className='flex-align-center'>
-                <h1 className='heading '> not liked any video</h1>
+              <div className='flex-align-column-center'>
+            
+                  <h1 className='heading '> Not liked any video</h1>
+             
+                <div className='login-cta'>
+                  <Link to='/'>
+                    <button className='ctn-btn'>Watch & like Video</button>
+                  </Link>
+                </div>
               </div>
             </>
           ) : (
