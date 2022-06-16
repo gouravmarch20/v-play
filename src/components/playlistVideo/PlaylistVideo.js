@@ -80,7 +80,7 @@ const PlaylistVideo = () => {
                                 deleteVideoFromPlaylist(
                                   playlistId,
                                   _id,
-                                  'token',
+                                  token,
                                   playlistDispatch
                                 )
                               }}
