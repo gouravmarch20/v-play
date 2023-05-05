@@ -19,6 +19,7 @@
   background-color: #49cbd5;
   text-decoration: none;
 }
+
 .nav-link-sleep {
   color: white;
   display: flex;
@@ -27,6 +28,7 @@
   padding: 2rem;
   text-decoration: none;
 }
+
 .nav-link-sleep:hover {
   background-color: #49cbd5;
 }
@@ -41,6 +43,7 @@
   font-size: 1.8rem;
   margin-left: 1rem;
 }
+
 .navLeft-divider {
   height: 2px;
   background-color: yellow;
